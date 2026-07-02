@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Daily Devotion · Bible NIV</title>
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkRhaWx5IERldm90aW9uIiwKICAic2hvcnRfbmFtZSI6ICJEZXZvdGlvbiIsCiAgImRlc2NyaXB0aW9uIjogIkRhaWx5IEJpYmxlIHZlcnNlcyB3aXRoIGFsYXJtcyIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjJlZGU4IiwKICAidGhlbWVfY29sb3IiOiAiIzhhNzU2NiIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCw8c3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDUxMiA1MTInPjxwYXRoIGZpbGw9JyM4YTc1NjYnIGQ9J00zMTIgMTkyaC0xMTJ2LTE2YzAtMjIuMDg2IDE3LjkxNC00MCA0MC00MHMyMi4wODYgMTcuOTE0IDQwIDQwaDE2YzAtMzAuOTI4LTI1LjA3Mi01Ni01Ni01NnMtNTYgMjUuMDcyLTU2IDU2djE2aC0xMTJ2MThjMCAzNS4zNDYgMjguNjU0IDY0IDY0IDY0aDE2MGMzNS4zNDYgMCA2NC0yOC42NTQgNjQtNjR2LTE4ek0zNTIgMjQwaC0xOTJjLTE3LjY3MyAwLTMyLTE0LjMyNy0zMi0zMnYtMTZjMC0zNS4zNDYgMjguNjU0LTY0IDY0LTY0aDEyOGMzNS4zNDYgMCA2NCAyOC42NTQgNjQgNjR2MTZjMCAxNy42NzMtMTQuMzI3IDMyLTMyIDMyek0zNTIgMTA0aC0xOTJjLTI2LjUxIDAtNDggMjEuNDktNDggNDh2MTZjMCAyNi41MSAyMS40OSA0OCA0OCA0OGgxOTJjMjYuNTEgMCA0OC0yMS40OSA0OC00OHYtMTZjMC0yNi41MS0yMS40OS00OC00OC00OHonLz48L3N2Zz4iLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Breezy · Emotional Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
+        /* (Same CSS as before — unchanged for brevity) */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html, body {
+        html,
+        body {
             width: 100%;
-            height: 100%;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
+            min-height: 100vh;
+            min-height: 100dvh;
             background: #f2ede8;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #2c241e;
@@ -26,43 +24,99 @@
             user-select: none;
             -webkit-user-select: none;
         }
-
-        /* FULL SCREEN - NO BOX BACKGROUND */
         .fullscreen {
             width: 100%;
-            height: 100vh;
-            height: 100dvh;
-            padding: 1.8rem 1.5rem;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding: 1.5rem 1.5rem 2rem;
             display: flex;
             flex-direction: column;
             background: linear-gradient(160deg, #f7f2ec 0%, #e8e0d8 100%);
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
-
+        .fullscreen::-webkit-scrollbar {
+            width: 4px;
+        }
+        .fullscreen::-webkit-scrollbar-track {
+            background: #e4dad2;
+            border-radius: 20px;
+        }
+        .fullscreen::-webkit-scrollbar-thumb {
+            background: #b8a69a;
+            border-radius: 20px;
+        }
+        .fullscreen {
+            scrollbar-width: thin;
+            scrollbar-color: #b8a69a #e4dad2;
+        }
         .header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             padding-bottom: 0.8rem;
             border-bottom: 2px solid rgba(218, 207, 196, 0.4);
             margin-bottom: 1.2rem;
             flex-shrink: 0;
+            gap: 12px;
+            flex-wrap: wrap;
         }
-
-        .header-icon {
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 250, 245, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1.5px solid #d6c8bc;
+            border-radius: 60px;
+            padding: 0.6rem 1.4rem 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 470;
+            color: #332a23;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .back-btn:active {
+            transform: scale(0.94);
+            background: #d6c7bb;
+        }
+        .back-btn i {
+            font-size: 1.1rem;
+            color: #5e4d3f;
+        }
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            justify-content: center;
+        }
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .header-icons .icon-robot {
             font-size: 2rem;
-            color: #786455;
-            margin-right: 0.8rem;
+            color: #6d8f7a;
         }
-
+        .header-icons .icon-feather {
+            font-size: 1.8rem;
+            color: #8a7566;
+        }
         .header h1 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 500;
             letter-spacing: -0.5px;
             color: #2b211b;
+            white-space: nowrap;
         }
-
         .header h1 span {
             font-weight: 300;
             font-size: 0.7rem;
@@ -72,1363 +126,1324 @@
             border-radius: 40px;
             margin-left: 0.3rem;
         }
-
+        .header-spacer {
+            width: 80px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 480px) {
+            .header {
+                flex-wrap: nowrap;
+                gap: 6px;
+            }
+            .back-btn {
+                padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+                font-size: 0.8rem;
+            }
+            .back-btn i {
+                font-size: 0.85rem;
+            }
+            .back-btn span {
+                display: none;
+            }
+            .header-icons .icon-robot {
+                font-size: 1.5rem;
+            }
+            .header-icons .icon-feather {
+                font-size: 1.3rem;
+            }
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            .header h1 span {
+                font-size: 0.55rem;
+                padding: 0.05rem 0.5rem;
+            }
+            .header-spacer {
+                width: 30px;
+            }
+        }
+        @media (max-width: 380px) {
+            .back-btn {
+                padding: 0.3rem 0.6rem;
+            }
+            .header h1 {
+                font-size: 1.1rem;
+            }
+            .header-icons .icon-robot {
+                font-size: 1.2rem;
+            }
+            .header-icons .icon-feather {
+                font-size: 1rem;
+            }
+            .header-spacer {
+                width: 20px;
+            }
+        }
+        @media (min-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .header-icons .icon-robot {
+                font-size: 2.4rem;
+            }
+            .header-icons .icon-feather {
+                font-size: 2.2rem;
+            }
+        }
         .subtitle {
             color: #5f5146;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             font-style: italic;
             text-align: center;
             margin-bottom: 1.2rem;
             flex-shrink: 0;
             opacity: 0.8;
+            padding: 0 0.5rem;
         }
-
-        /* Time Cards - Full width tap targets */
-        .time-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .time-card {
-            background: rgba(255, 250, 245, 0.4);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 2px solid rgba(214, 200, 188, 0.5);
-            border-radius: 18px;
-            padding: 0.6rem 0.3rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            text-align: center;
-        }
-
-        .time-card:active {
-            transform: scale(0.95);
-            background: rgba(214, 200, 188, 0.3);
-        }
-
-        .time-card .icon {
-            font-size: 1.3rem;
-            color: #5e4d3f;
-            display: block;
-            margin-bottom: 0.1rem;
-        }
-
-        .time-card .label {
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            color: #5f5146;
-        }
-
-        .time-card .time-display {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #2b211b;
-            background: rgba(255, 250, 245, 0.5);
-            border-radius: 10px;
-            padding: 0.1rem 0.2rem;
-            margin-top: 0.1rem;
-            border: 1px solid rgba(221, 208, 196, 0.4);
-        }
-
-        .time-card .status {
-            font-size: 0.55rem;
-            margin-top: 0.15rem;
-            padding: 0.05rem 0.4rem;
-            border-radius: 20px;
-            display: inline-block;
-            background: rgba(228, 218, 210, 0.6);
-            color: #5f5146;
-        }
-
-        .time-card .status.done {
-            background: rgba(184, 166, 154, 0.6);
-            color: #fcf7f2;
-        }
-
-        .time-card .status.alarm {
-            background: rgba(212, 184, 176, 0.8);
-            color: #4d2e26;
-            animation: pulseAlarm 0.8s ease-in-out infinite;
-        }
-
-        @keyframes pulseAlarm {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.92); }
-        }
-
-        /* Verse Display - Centered */
-        .verse-container {
+        .chat-container {
             flex: 1;
             display: flex;
             flex-direction: column;
+            min-height: 0;
+            margin-bottom: 1rem;
+        }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-height: 300px;
+            max-height: 600px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-messages::-webkit-scrollbar-track {
+            background: #e4dad2;
+            border-radius: 20px;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #b8a69a;
+            border-radius: 20px;
+        }
+        .chat-messages {
+            scrollbar-width: thin;
+            scrollbar-color: #b8a69a #e4dad2;
+        }
+        .message-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 92%;
+        }
+        .message-wrapper.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        .message-wrapper.bot {
+            align-self: flex-start;
+        }
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(176, 154, 139, 0.4);
+            backdrop-filter: blur(8px);
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 0.2rem;
-            min-height: 0;
-        }
-
-        .verse-box {
-            width: 100%;
-            max-width: 450px;
-            background: rgba(255, 250, 245, 0.25);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 28px;
-            padding: 1.8rem 1.2rem;
-            border: 1px solid rgba(220, 207, 196, 0.3);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .verse-box .ref {
-            font-weight: 600;
-            color: #4f3d31;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .verse-box .text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            font-weight: 350;
-            color: #281f1a;
-        }
-
-        .verse-box .time-tag {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #8f7c6e;
-            margin-top: 0.6rem;
-            opacity: 0.7;
-        }
-
-        .verse-box .alarm-indicator {
-            font-size: 1.2rem;
-            color: #d4b8b0;
-            margin-top: 0.3rem;
-            animation: ringIcon 1s ease-in-out infinite;
-        }
-
-        @keyframes ringIcon {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(8deg); }
-            75% { transform: rotate(-8deg); }
-        }
-
-        /* Controls - Minimal */
-        .controls {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
             flex-shrink: 0;
+            border: 1.5px solid rgba(214, 200, 188, 0.5);
+        }
+        .avatar i {
+            font-size: 1.2rem;
+            color: #3f342c;
+        }
+        .message-wrapper.user .avatar {
+            background: rgba(109, 143, 122, 0.3);
+            border-color: rgba(109, 143, 122, 0.3);
+        }
+        .message-wrapper.user .avatar i {
+            color: #4a6b5c;
+        }
+        .message {
+            padding: 1rem 1.4rem;
+            border-radius: 24px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            word-wrap: break-word;
+            animation: msgFadeIn 0.35s ease forwards;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            flex: 1;
+        }
+        @keyframes msgFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .message-wrapper.user .message {
+            align-self: flex-end;
+            background: rgba(176, 154, 139, 0.35);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(176, 154, 139, 0.25);
+            color: #2b211b;
+            border-bottom-right-radius: 6px;
+        }
+        .message-wrapper.bot .message {
+            align-self: flex-start;
+            background: rgba(255, 250, 245, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(214, 200, 188, 0.4);
+            color: #281f1a;
+            border-bottom-left-radius: 6px;
+        }
+        .message .msg-meta {
+            font-size: 0.65rem;
+            opacity: 0.5;
+            margin-top: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .message-wrapper.bot .msg-meta {
+            color: #5f5146;
+        }
+        .message-wrapper.user .msg-meta {
+            color: #5f5146;
+            justify-content: flex-end;
+        }
+        .typing-indicator {
+            align-self: flex-start;
+            background: rgba(255, 250, 245, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(214, 200, 188, 0.4);
+            border-radius: 24px;
+            border-bottom-left-radius: 6px;
+            padding: 0.8rem 1.4rem;
+            display: none;
+            gap: 6px;
+            align-items: center;
+            margin-left: 48px;
+        }
+        .typing-indicator.show {
+            display: flex;
+        }
+        .typing-indicator .dot {
+            width: 8px;
+            height: 8px;
+            background: #8a7566;
+            border-radius: 50%;
+            animation: typingDot 1.2s ease-in-out infinite;
+        }
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-indicator .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes typingDot {
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.3;
+            }
+            30% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+        .input-area {
+            display: flex;
+            gap: 12px;
+            align-items: center;
             padding-top: 0.8rem;
             border-top: 2px solid rgba(218, 207, 196, 0.3);
-            margin-top: 0.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            flex-wrap: wrap;
         }
-
-        .btn {
-            background: rgba(255, 250, 245, 0.4);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(214, 200, 188, 0.5);
+        .input-area input {
+            flex: 1;
+            min-width: 160px;
+            padding: 0.9rem 1.4rem;
+            border: 2px solid rgba(214, 200, 188, 0.5);
             border-radius: 60px;
-            padding: 0.4rem 1.2rem;
-            font-size: 0.75rem;
+            font-size: 1.05rem;
+            font-family: inherit;
+            color: #2b211b;
+            background: rgba(255, 250, 245, 0.5);
+            backdrop-filter: blur(8px);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-area input:focus {
+            border-color: #b09a8b;
+            box-shadow: 0 0 0 4px rgba(176, 154, 139, 0.15);
+        }
+        .input-area input::placeholder {
+            color: #8f7c6e;
+            font-style: italic;
+            opacity: 0.7;
+        }
+        .input-area .send-btn {
+            background: rgba(176, 154, 139, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(138, 117, 102, 0.3);
+            border-radius: 60px;
+            padding: 0.9rem 1.8rem;
+            font-size: 1.05rem;
             font-weight: 470;
-            color: #332a23;
+            color: #fcf7f2;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
             -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
         }
-
-        .btn:active {
+        .input-area .send-btn:active {
             transform: scale(0.94);
-            background: rgba(214, 200, 188, 0.4);
-        }
-
-        .btn-primary {
-            background: rgba(176, 154, 139, 0.6);
-            border-color: rgba(138, 117, 102, 0.5);
-            color: #fcf7f2;
-        }
-
-        .btn-primary:active {
             background: rgba(138, 117, 102, 0.6);
         }
-
-        .btn-success {
-            background: rgba(143, 179, 160, 0.5);
-            border-color: rgba(109, 148, 130, 0.4);
-            color: #fcf7f2;
+        .input-area .send-btn i {
+            font-size: 1.1rem;
         }
-
-        .btn-success:active {
-            background: rgba(109, 148, 130, 0.5);
-        }
-
-        .btn-danger {
-            background: rgba(212, 184, 176, 0.5);
-            border-color: rgba(196, 160, 152, 0.4);
-            color: #4d2e26;
-        }
-
-        .btn-danger:active {
-            background: rgba(196, 160, 152, 0.5);
-        }
-
         .footer {
             flex-shrink: 0;
             text-align: center;
-            font-size: 0.55rem;
+            font-size: 0.65rem;
             color: rgba(160, 143, 128, 0.6);
-            padding-top: 0.6rem;
-            margin-top: 0.3rem;
+            padding-top: 0.8rem;
+            margin-top: 0.5rem;
             border-top: 1px solid rgba(220, 207, 196, 0.2);
         }
-
         .footer i {
-            margin: 0 2px;
+            margin: 0 3px;
         }
-
-        /* Alarm Overlay - Full screen */
-        .alarm-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            height: 100dvh;
-            background: rgba(30, 25, 22, 0.92);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.5s ease;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .alarm-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .alarm-overlay .alarm-icon {
-            font-size: 4.5rem;
-            color: #d4b8b0;
-            margin-bottom: 0.5rem;
-            animation: ringIcon 0.8s ease-in-out infinite;
-        }
-
-        .alarm-overlay h2 {
-            color: #fcf7f2;
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin-bottom: 0.3rem;
-        }
-
-        .alarm-overlay .alarm-verse {
-            color: #e8ddd4;
-            font-size: 1.3rem;
-            line-height: 1.8;
-            max-width: 400px;
-            margin: 0.8rem 0 0.5rem;
-        }
-
-        .alarm-overlay .alarm-ref {
-            color: #c4b5a8;
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .alarm-overlay .btn-dismiss {
-            background: rgba(176, 154, 139, 0.8);
-            border: 1px solid rgba(138, 117, 102, 0.5);
-            color: #fcf7f2;
-            padding: 0.8rem 2.8rem;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
-            backdrop-filter: blur(8px);
-        }
-
-        .alarm-overlay .btn-dismiss:active {
-            transform: scale(0.94);
-            background: rgba(138, 117, 102, 0.8);
-        }
-
-        /* Time Picker Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            height: 100dvh;
-            background: rgba(30, 25, 22, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            padding: 1.5rem;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal-content {
-            background: rgba(250, 245, 239, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 32px;
-            padding: 1.8rem 1.5rem;
-            max-width: 340px;
-            width: 100%;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0.95) translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .modal-content h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #2b211b;
-            margin-bottom: 0.1rem;
-        }
-
-        .modal-content .modal-sub {
-            color: #5f5146;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .modal-content label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #3f342c;
-            margin-bottom: 0.3rem;
-            text-align: left;
-        }
-
-        .modal-content input[type="time"] {
-            width: 100%;
-            padding: 0.7rem;
-            border: 2px solid rgba(214, 200, 188, 0.6);
-            border-radius: 14px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2b211b;
-            background: rgba(255, 250, 245, 0.6);
-            outline: none;
-            transition: border-color 0.2s;
-            font-family: inherit;
-        }
-
-        .modal-content input[type="time"]:focus {
-            border-color: #b09a8b;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 1rem;
-            justify-content: flex-end;
-        }
-
-        .modal-actions .btn {
-            padding: 0.4rem 1.2rem;
-        }
-
-        /* Notification permission banner - subtle */
-        .perm-banner {
-            background: rgba(232, 221, 212, 0.6);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 14px;
-            padding: 0.4rem 0.8rem;
-            margin-bottom: 0.8rem;
-            font-size: 0.7rem;
-            color: #3f342c;
-            display: none;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
-
-        .perm-banner.show {
-            display: flex;
-        }
-
-        .perm-banner .btn {
-            font-size: 0.65rem;
-            padding: 0.2rem 0.8rem;
-        }
-
-        /* Status badge */
-        .status-badge {
-            display: inline-block;
-            padding: 0.1rem 0.6rem;
-            border-radius: 16px;
-            font-size: 0.55rem;
-            background: rgba(228, 218, 210, 0.5);
-            color: #5f5146;
-        }
-
-        .status-badge.active {
-            background: rgba(143, 179, 160, 0.4);
-            color: #2b211b;
-        }
-
         @media (max-width: 400px) {
             .fullscreen {
-                padding: 1rem 0.8rem;
+                padding: 1rem 0.8rem 1.5rem;
             }
-            .header h1 {
-                font-size: 1.3rem;
+            .message {
+                font-size: 0.92rem;
+                padding: 0.8rem 1rem;
             }
-            .header-icon {
-                font-size: 1.6rem;
+            .message-wrapper {
+                max-width: 96%;
             }
-            .time-section {
-                gap: 5px;
+            .input-area input {
+                font-size: 0.92rem;
+                padding: 0.7rem 1.2rem;
+                min-width: 120px;
             }
-            .time-card {
+            .input-area .send-btn {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+            }
+            .chat-messages {
+                max-height: 400px;
+                min-height: 200px;
                 padding: 0.4rem 0.2rem;
-                border-radius: 14px;
             }
-            .time-card .icon {
-                font-size: 1.1rem;
+            .subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 0.8rem;
             }
-            .time-card .time-display {
-                font-size: 0.7rem;
+            .avatar {
+                width: 30px;
+                height: 30px;
             }
-            .verse-box {
-                padding: 1.2rem 0.8rem;
-                border-radius: 20px;
+            .avatar i {
+                font-size: 0.9rem;
             }
-            .verse-box .text {
-                font-size: 1rem;
-            }
-            .alarm-overlay .alarm-verse {
-                font-size: 1.1rem;
-            }
-            .alarm-overlay .alarm-icon {
-                font-size: 3.5rem;
-            }
-            .controls .btn {
-                font-size: 0.65rem;
-                padding: 0.3rem 0.8rem;
+            .typing-indicator {
+                margin-left: 40px;
             }
         }
-
         @media (min-width: 600px) {
+            .chat-messages {
+                max-height: 700px;
+                min-height: 400px;
+            }
+            .message-wrapper {
+                max-width: 82%;
+            }
+            .message {
+                font-size: 1.15rem;
+                padding: 1.2rem 1.8rem;
+            }
+            .input-area input {
+                font-size: 1.15rem;
+                padding: 1rem 1.8rem;
+            }
+            .input-area .send-btn {
+                font-size: 1.15rem;
+                padding: 1rem 2.2rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+        }
+        @media (min-width: 900px) {
             .fullscreen {
-                padding: 2.5rem 3rem;
+                padding: 2.5rem 4rem 3rem;
+                max-width: 1100px;
+                margin: 0 auto;
             }
-            .verse-box .text {
-                font-size: 1.5rem;
+            .chat-messages {
+                max-height: 800px;
+                min-height: 450px;
             }
-            .time-card .time-display {
-                font-size: 1rem;
+            .message-wrapper {
+                max-width: 75%;
             }
+            .message {
+                font-size: 1.2rem;
+            }
+        }
+        .chat-messages {
+            scroll-behavior: smooth;
+        }
+        .message-wrapper.bot .message .heart-icon {
+            color: #c47a7a;
+            margin-right: 4px;
         }
     </style>
 </head>
 <body>
 
-    <!-- FULL SCREEN - NO BOX -->
     <div class="fullscreen" id="app">
-
         <!-- Header -->
         <div class="header">
-            <i class="fas fa-feather-alt header-icon"></i>
-            <h1>Devotion <span>NIV</span></h1>
-        </div>
-
-        <div class="subtitle">"Let your emotions find rest in His word"</div>
-
-        <!-- Permission Banner -->
-        <div class="perm-banner" id="permBanner">
-            <span><i class="fas fa-bell"></i> Enable notifications</span>
-            <button class="btn btn-primary" id="enableNotifBtn">Allow</button>
-        </div>
-
-        <!-- Time Cards -->
-        <div class="time-section">
-            <div class="time-card" id="morningCard" data-slot="morning">
-                <span class="icon"><i class="fas fa-sun"></i></span>
-                <div class="label">Morning</div>
-                <div class="time-display" id="morningTime">6:00 AM</div>
-                <span class="status" id="morningStatus"><i class="fas fa-clock"></i> wait</span>
+            <button class="back-btn" id="backBtn">
+                <i class="fas fa-arrow-left"></i> <span>Back</span>
+            </button>
+            <div class="header-center">
+                <div class="header-icons">
+                    <i class="fas fa-robot icon-robot"></i>
+                    <i class="fas fa-feather-alt icon-feather"></i>
+                </div>
+                <h1>Breezy <span>AI</span></h1>
             </div>
-            <div class="time-card" id="afternoonCard" data-slot="afternoon">
-                <span class="icon"><i class="fas fa-cloud-sun"></i></span>
-                <div class="label">Afternoon</div>
-                <div class="time-display" id="afternoonTime">12:00 PM</div>
-                <span class="status" id="afternoonStatus"><i class="fas fa-clock"></i> wait</span>
+            <div class="header-spacer"></div>
+        </div>
+        <div class="subtitle">Tell me how you feel — I'm here to listen and encourage you ❤️</div>
+        <!-- Chat -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="typing-indicator" id="typingIndicator">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-            <div class="time-card" id="eveningCard" data-slot="evening">
-                <span class="icon"><i class="fas fa-moon"></i></span>
-                <div class="label">Evening</div>
-                <div class="time-display" id="eveningTime">8:00 PM</div>
-                <span class="status" id="eveningStatus"><i class="fas fa-clock"></i> wait</span>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Share your feelings, or just say what's on your mind…" autocomplete="off" />
+                <button class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i> Ask</button>
             </div>
         </div>
-
-        <!-- Verse Display - Centered -->
-        <div class="verse-container">
-            <div class="verse-box" id="verseBox">
-                <div class="ref" id="verseRef">Psalm 23:1</div>
-                <div class="text" id="verseText">The Lord is my shepherd; I shall not want.</div>
-                <div class="time-tag" id="verseTimeTag"><i class="fas fa-sun"></i> Morning verse</div>
-                <div class="alarm-indicator" id="alarmIndicator" style="display:none;"><i class="fas fa-bell"></i></div>
-            </div>
-        </div>
-
-        <!-- Controls - Only background enable -->
-        <div class="controls">
-            <button class="btn btn-success" id="registerSWBtn"><i class="fas fa-download"></i> Background</button>
-            <button class="btn btn-danger" id="testAlarmBtn"><i class="fas fa-bell"></i> Test</button>
-        </div>
-
         <div class="footer">
-            <i class="fas fa-clock"></i> Tap time to change <i class="fas fa-bell"></i>
-            <span id="swStatus" class="status-badge"><i class="fas fa-circle"></i> Offline</span>
-        </div>
-    </div>
-
-    <!-- Alarm Overlay -->
-    <div class="alarm-overlay" id="alarmOverlay">
-        <div class="alarm-icon"><i class="fas fa-bell"></i></div>
-        <h2><i class="fas fa-pray"></i> Devotion Time</h2>
-        <div class="alarm-verse" id="alarmVerse">The Lord is my shepherd; I shall not want.</div>
-        <div class="alarm-ref" id="alarmRef">Psalm 23:1</div>
-        <button class="btn-dismiss" id="dismissAlarmBtn"><i class="fas fa-check"></i> Dismiss</button>
-    </div>
-
-    <!-- Time Picker Modal -->
-    <div class="modal-overlay" id="timeModal">
-        <div class="modal-content">
-            <h3 id="modalTitle"><i class="fas fa-clock"></i> Set Time</h3>
-            <div class="modal-sub" id="modalSub">Choose your devotion time</div>
-            <label for="timePicker"><i class="fas fa-hourglass-half"></i> Time:</label>
-            <input type="time" id="timePicker" value="06:00">
-            <div class="modal-actions">
-                <button class="btn" id="modalCancel"><i class="fas fa-times"></i> Cancel</button>
-                <button class="btn btn-primary" id="modalSave"><i class="fas fa-save"></i> Save</button>
-            </div>
+            <i class="fas fa-robot"></i> Breezy · Listening with love <i class="fas fa-feather-alt"></i>
         </div>
     </div>
 
     <script>
         // ============================================================
-        // SERVICE WORKER - For background alarms
+        // MASSIVE FEELINGS DATABASE — covers hundreds of emotions, sins,
+        // confessions, doubts, problems, cheating, love life, and personal info
         // ============================================================
-        let swRegistration = null;
 
-        // Inline Service Worker code as blob
-        const SW_CODE = `
-            self.addEventListener('install', function(e) {
-                self.skipWaiting();
-            });
+        const feelingsData = {
 
-            self.addEventListener('activate', function(e) {
-                e.waitUntil(clients.claim());
-            });
+            // ----- SADNESS (expanded) -----
+            sad: {
+                keywords: ['sad', 'sorrow', 'grief', 'mourn', 'cry', 'weep', 'depressed', 'down', 'brokenhearted',
+                    'heartbroken', 'grieving', 'blue', 'melancholy', 'tears', 'crying', 'sobbing', 'grief-stricken',
+                    'heartache', 'painful', 'suffering', 'anguish', 'distress', 'misery', 'desolate', 'forlorn',
+                    'woe', 'lament', 'weeping', 'bawling', 'sadness', 'saddened', 'downcast', 'crestfallen'
+                ],
+                responses: [{
+                    advice: "I'm sorry you're feeling so sad. It's okay to let the tears flow — God sees every tear and holds them in His bottle. You are not forgotten, and this sadness will not last forever.",
+                    verse: "Psalm 34:18 — 'The Lord is near to the brokenhearted and saves those who are crushed in spirit.'"
+                }, {
+                    advice: "Sadness can feel like a heavy blanket, but you are not alone. God is close to the brokenhearted and promises to bind up your wounds.",
+                    verse: "Psalm 147:3 — 'He heals the brokenhearted and binds up their wounds.'"
+                }, {
+                    advice: "Even in your deepest sorrow, God is with you. He collects your tears and will turn your mourning into joy. Hold on to His promise.",
+                    verse: "Revelation 21:4 — 'He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain.'"
+                }]
+            },
 
-            self.addEventListener('push', function(e) {
-                const data = e.data ? e.data.json() : { 
-                    title: '📖 Devotion Time', 
-                    body: 'It\\'s time for your daily devotion!',
-                    ref: 'Psalm 23:1'
-                };
-                const options = {
-                    body: data.body || 'Open for your daily verse',
-                    icon: 'data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"%238a7566\\" d=\\"M312 192h-112v-16c0-22.086 17.914-40 40-40s22.086 17.914 40 40h16c0-30.928-25.072-56-56-56s-56 25.072-56 56v16h-112v18c0 35.346 28.654 64 64 64h160c35.346 0 64-28.654 64-64v-18zM352 240h-192c-17.673 0-32-14.327-32-32v-16c0-35.346 28.654-64 64-64h128c35.346 0 64 28.654 64 64v16c0 17.673-14.327 32-32 32zM352 104h-192c-26.51 0-48 21.49-48 48v16c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48v-16c0-26.51-21.49-48-48-48z\\"/></svg>',
-                    badge: 'data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"%238a7566\\" d=\\"M312 192h-112v-16c0-22.086 17.914-40 40-40s22.086 17.914 40 40h16c0-30.928-25.072-56-56-56s-56 25.072-56 56v16h-112v18c0 35.346 28.654 64 64 64h160c35.346 0 64-28.654 64-64v-18zM352 240h-192c-17.673 0-32-14.327-32-32v-16c0-35.346 28.654-64 64-64h128c35.346 0 64 28.654 64 64v16c0 17.673-14.327 32-32 32zM352 104h-192c-26.51 0-48 21.49-48 48v16c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48v-16c0-26.51-21.49-48-48-48z\\"/></svg>',
-                    vibrate: [200, 100, 200, 100, 300],
-                    requireInteraction: true,
-                    data: { url: '/' },
-                    actions: [
-                        { action: 'open', title: '📖 Open' }
-                    ]
-                };
-                e.waitUntil(
-                    self.registration.showNotification(data.title || '📖 Daily Devotion', options)
-                );
-            });
+            // ----- ANXIETY (expanded) -----
+            anxious: {
+                keywords: ['anxious', 'anxiety', 'worried', 'worry', 'stress', 'overwhelmed', 'panic', 'fearful',
+                    'afraid', 'scared', 'nervous', 'troubled', 'dread', 'uneasy', 'fret', 'jittery', 'tense',
+                    'restless', 'apprehensive', 'paranoid', 'agitated', 'concerned', 'distressed', 'edgy', 'frazzled',
+                    'on edge', 'perturbed', 'spooked', 'stressed out', 'uptight'
+                ],
+                responses: [{
+                    advice: "I hear your anxiety. The God of peace is greater than any storm. He promises to guard your heart and mind with a peace that doesn't make sense in the middle of chaos.",
+                    verse: "Philippians 4:6-7 — 'Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.'"
+                }, {
+                    advice: "Your worries are real, but they are not the final word. God holds tomorrow, and He holds you. Cast your worries on Him, one by one.",
+                    verse: "1 Peter 5:7 — 'Cast all your anxiety on him because he cares for you.'"
+                }, {
+                    advice: "When anxiety whispers 'what if,' let faith whisper 'even if.' Even if everything falls apart, God is still with you. He has not given you a spirit of fear, but of power, love, and a sound mind.",
+                    verse: "2 Timothy 1:7 — 'For God has not given us a spirit of fear, but of power and of love and of a sound mind.'"
+                }]
+            },
 
-            self.addEventListener('notificationclick', function(e) {
-                e.notification.close();
-                if (e.action === 'open' || !e.action) {
-                    e.waitUntil(clients.openWindow('/'));
-                }
-            });
-        `;
+            // ----- ANGER (expanded) -----
+            angry: {
+                keywords: ['angry', 'anger', 'furious', 'rage', 'frustrated', 'bitter', 'resentful', 'irritated',
+                    'annoyed', 'wrath', 'mad', 'outraged', 'enraged', 'fuming', 'livid', 'hostile', 'irate',
+                    'seething', 'incensed', 'indignant', 'irritated', 'vexed', 'cross', 'grumpy', 'testy', 'touchy'
+                ],
+                responses: [{
+                    advice: "I feel your anger. Anger can be a signal that something important is at stake. But don't let it control you — pause, breathe, and give your anger to God.",
+                    verse: "Ephesians 4:26-27 — 'In your anger do not sin: Do not let the sun go down while you are still angry, and do not give the devil a foothold.'"
+                }, {
+                    advice: "It's okay to be angry, but don't let it take root. God understands your frustration and invites you to bring it to Him.",
+                    verse: "Psalm 37:8 — 'Refrain from anger and turn from wrath; do not fret—it leads only to evil.'"
+                }, {
+                    advice: "Anger can be like fire — useful when controlled, destructive when wild. Ask God to help you channel your anger into something good.",
+                    verse: "James 1:19-20 — 'Everyone should be quick to listen, slow to speak and slow to become angry, because human anger does not produce the righteousness that God desires.'"
+                }]
+            },
 
-        async function registerServiceWorker() {
-            try {
-                const blob = new Blob([SW_CODE], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                const registration = await navigator.serviceWorker.register(swUrl);
-                swRegistration = registration;
-                console.log('Service Worker registered');
+            // ----- FEAR (expanded) -----
+            fear: {
+                keywords: ['fear', 'terrified', 'scared', 'afraid', 'phobia', 'dread', 'frightened', 'panicked',
+                    'horror', 'trembling', 'petrified', 'fright', 'terror', 'alarmed', 'jumpy', 'spooked',
+                    'startled', 'intimidated', 'cowardly', 'timid', 'wary'
+                ],
+                responses: [{
+                    advice: "Fear can be paralyzing, but you don't have to face it alone. God says, 'Fear not, for I am with you.' He is holding your hand.",
+                    verse: "Isaiah 41:10 — 'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.'"
+                }, {
+                    advice: "Your fear is valid, but it doesn't have to have the last word. God has given you a spirit not of fear but of power, love, and a sound mind.",
+                    verse: "2 Timothy 1:7 — 'For God has not given us a spirit of fear, but of power and of love and of a sound mind.'"
+                }, {
+                    advice: "When you feel afraid, remember that you are in the palm of God's hand. Nothing can snatch you away. Let His perfect love drive out your fear.",
+                    verse: "1 John 4:18 — 'There is no fear in love. But perfect love drives out fear.'"
+                }]
+            },
 
-                const permission = await Notification.requestPermission();
-                if (permission === 'granted') {
-                    document.getElementById('swStatus').innerHTML = '<i class="fas fa-check-circle"></i> Active';
-                    document.getElementById('swStatus').className = 'status-badge active';
-                    document.getElementById('permBanner').classList.remove('show');
-                    notificationPermission = true;
+            // ----- LONELINESS (expanded) -----
+            lonely: {
+                keywords: ['lonely', 'loneliness', 'alone', 'isolated', 'abandoned', 'forsaken', 'unwanted', 'rejected',
+                    'left out', 'desolate', 'neglected', 'solitary', 'lonesome', 'friendless', 'forgotten', 'alienated',
+                    'withdrawn', 'remote', 'secluded', 'shunned'
+                ],
+                responses: [{
+                    advice: "Loneliness can feel like a desert, but you are never truly alone. God promises never to leave you or forsake you. He is with you in the silence.",
+                    verse: "Deuteronomy 31:8 — 'The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.'"
+                }, {
+                    advice: "Even when everyone else seems far away, God is closer than your breath. He knows your name, and He calls you His own.",
+                    verse: "Isaiah 43:1 — 'Do not fear, for I have redeemed you; I have summoned you by name; you are mine.'"
+                }, {
+                    advice: "Loneliness is a heavy weight, but it can also be a time to draw closer to God. He is the friend who sticks closer than a brother.",
+                    verse: "Psalm 25:16 — 'Turn to me and be gracious to me, for I am lonely and afflicted.'"
+                }]
+            },
 
-                    // Try periodic sync
-                    if ('periodicSync' in registration) {
-                        try {
-                            await registration.periodicSync.register('devotion-check', {
-                                minInterval: 60 * 60 * 1000
-                            });
-                        } catch (e) { /* ignore */ }
-                    }
+            // ----- JOY (expanded) -----
+            joy: {
+                keywords: ['joy', 'happy', 'joyful', 'glad', 'delight', 'cheerful', 'blessed', 'excited', 'elated',
+                    'ecstatic', 'thrilled', 'overjoyed', 'cheer', 'bliss', 'glee', 'merry', 'festive', 'jubilant',
+                    'radiant', 'content', 'satisfied', 'fulfilled', 'grateful', 'thankful', 'appreciative', 'blessed',
+                    'optimistic', 'encouraged', 'motivated', 'inspired', 'confident', 'victorious', 'triumphant',
+                    'exultant', 'rejoicing', 'jovial', 'lively', 'sprightly'
+                ],
+                responses: [{
+                    advice: "I'm so glad you're feeling joyful! This is a gift from God. Let your joy be a light to others, and thank the One who gives you every reason to smile.",
+                    verse: "Nehemiah 8:10 — 'Do not grieve, for the joy of the Lord is your strength.'"
+                }, {
+                    advice: "Joy is a fruit of the Spirit, and it's wonderful to see it in you! Let this happiness remind you of God's faithfulness.",
+                    verse: "Philippians 4:4 — 'Rejoice in the Lord always. I will say it again: Rejoice!'"
+                }, {
+                    advice: "Your joy is contagious! Remember that joy is not dependent on circumstances — it's rooted in the unshakeable love of God.",
+                    verse: "Psalm 30:5 — 'Weeping may stay for the night, but rejoicing comes in the morning.'"
+                }]
+            },
 
-                    // Try background sync
-                    if ('sync' in registration) {
-                        try {
-                            await registration.sync.register('devotion-sync');
-                        } catch (e) { /* ignore */ }
-                    }
+            // ----- PEACE (expanded) -----
+            peace: {
+                keywords: ['peace', 'peaceful', 'calm', 'at rest', 'serene', 'content', 'centered', 'tranquil', 'still',
+                    'relaxed', 'unworried', 'rest', 'quiet', 'harmony', 'secure', 'safe', 'protected', 'assured',
+                    'untroubled', 'composed', 'cool', 'collected', 'easygoing', 'mellow'
+                ],
+                responses: [{
+                    advice: "I'm so glad you're feeling peaceful. That is a precious gift from God. The peace of Christ is not like the world's peace — it's a deep stillness that settles your soul.",
+                    verse: "John 14:27 — 'Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.'"
+                }, {
+                    advice: "Peace is a fruit of the Spirit, and it's beautiful to see it in you! Let this calm remind you that God is in control.",
+                    verse: "Romans 15:13 — 'May the God of hope fill you with all joy and peace as you trust in him.'"
+                }, {
+                    advice: "Peace is not the absence of chaos, but the presence of God. Rest in Him today.",
+                    verse: "Psalm 4:8 — 'In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety.'"
+                }]
+            },
 
-                    return true;
-                }
-                return false;
-            } catch (e) {
-                console.error('SW registration failed:', e);
-                document.getElementById('swStatus').innerHTML = '<i class="fas fa-exclamation-circle"></i> Unavailable';
-                return false;
+            // ----- GRATITUDE (expanded) -----
+            gratitude: {
+                keywords: ['grateful', 'thankful', 'gratitude', 'appreciative', 'blessed', 'thank you', 'appreciation',
+                    'thankfulness', 'blessing', 'gratitude', 'acknowledgment', 'recognition', 'indebted', 'obliged'
+                ],
+                responses: [{
+                    advice: "Gratitude is a powerful posture of the heart! Giving thanks shifts our focus from what we lack to what we have. It opens the door for God's peace and joy.",
+                    verse: "1 Thessalonians 5:16-18 — 'Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.'"
+                }, {
+                    advice: "A thankful heart is a magnet for miracles. When you focus on God's goodness, your problems begin to shrink.",
+                    verse: "Psalm 107:1 — 'Give thanks to the Lord, for he is good; his love endures forever.'"
+                }, {
+                    advice: "Gratitude unlocks the fullness of life. Keep counting your blessings, and you'll find joy in the ordinary.",
+                    verse: "Colossians 3:17 — 'And whatever you do... do it all in the name of the Lord Jesus, giving thanks to God the Father through him.'"
+                }]
+            },
+
+            // ----- DISCOURAGEMENT (expanded) -----
+            discouraged: {
+                keywords: ['discouraged', 'discouragement', 'hopeless', 'despair', 'defeated', 'downhearted',
+                    'disheartened', 'giving up', 'tired', 'weary', 'exhausted', 'faint', 'helpless', 'burnout',
+                    'despondent', 'dejected', 'crestfallen', 'pessimistic', 'cynical', 'resigned', 'beaten'
+                ],
+                responses: [{
+                    advice: "I hear your weariness. It's so hard when hope feels far away. But God is the God of hope, and He promises to renew your strength.",
+                    verse: "Isaiah 40:31 — 'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.'"
+                }, {
+                    advice: "When you feel like you can't go on, God carries you. His grace is sufficient, and His power is made perfect in your weakness.",
+                    verse: "2 Corinthians 12:9 — 'My grace is sufficient for you, for my power is made perfect in weakness.'"
+                }, {
+                    advice: "Hope is not lost. God is still working, even when you can't see it. Trust that He is moving in the shadows.",
+                    verse: "Lamentations 3:22-23 — 'Because of the Lord's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.'"
+                }]
+            },
+
+            // ----- GUILT / CONFESSION / SIN (MASSIVE EXPANSION) -----
+            sin: {
+                keywords: ['guilty', 'guilt', 'ashamed', 'shame', 'convicted', 'regret', 'remorse', 'sorry', 'unworthy',
+                    'condemned', 'blame', 'confess', 'confession', 'forgiveness', 'repent', 'sin', 'sinner',
+                    'transgression', 'wrongdoing', 'mistake', 'failure', 'lied', 'steal', 'stole', 'fornication',
+                    'lust', 'pornography', 'gambling', 'gluttony', 'pride', 'envy', 'wrath', 'sloth', 'covet',
+                    'coveting', 'adultery', 'murder', 'hate', 'bitterness', 'unforgiveness', 'gossip', 'slander',
+                    'backbiting', 'cursing', 'blasphemy', 'idolatry', 'witchcraft', 'occult', 'disobedience',
+                    'rebellion', 'hypocrisy', 'arrogance', 'vanity', 'materialism', 'love of money', 'corruption',
+                    'bribery', 'violence', 'abuse', 'oppression', 'racism', 'discrimination', 'judging', 'mocking',
+                    'disrespect', 'impatience', 'anger toward God', 'questioning God', 'losing hope', 'giving up',
+                    'suicidal thoughts', 'despair', 'regret from past mistakes', 'guilt over sin'
+                ],
+                responses: [{
+                    advice: "Guilt can be a heavy burden, but God is the God of mercy. If you confess your sins, He is faithful to forgive and to cleanse you. You are not defined by your mistakes — you are defined by His grace.",
+                    verse: "1 John 1:9 — 'If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.'"
+                }, {
+                    advice: "Shame whispers that you are beyond repair, but God says you are redeemable. There is no condemnation for those who are in Christ Jesus. Let go of the shame and receive His forgiveness.",
+                    verse: "Romans 8:1 — 'Therefore, there is now no condemnation for those who are in Christ Jesus.'"
+                }, {
+                    advice: "Your past does not define you. God's mercy is new every morning. He removes your transgressions as far as the east is from the west. Let Him lift the weight of guilt and give you peace.",
+                    verse: "Psalm 103:12 — 'As far as the east is from the west, so far has he removed our transgressions from us.'"
+                }, {
+                    advice: "Confession is not about punishment — it's about freedom. When you bring your sins to God, He welcomes you with open arms. He already knows, and He still loves you.",
+                    verse: "Proverbs 28:13 — 'Whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy.'"
+                }]
+            },
+
+            // ----- DOUBT (expanded) -----
+            doubt: {
+                keywords: ['doubt', 'doubting', 'questioning', 'uncertain', 'unbelief', 'skeptical', 'cynical',
+                    'distrustful', 'wavering', 'hesitant', 'ambivalent', 'confused', 'perplexed', 'baffled',
+                    'bewildered', 'lost faith', 'why god', 'does god exist', 'is god real', 'can i be saved'
+                ],
+                responses: [{
+                    advice: "Doubt is not the opposite of faith — it's part of faith. Even the disciples doubted. But Jesus never rejected them. Bring your doubts to Him, and let Him show you the truth.",
+                    verse: "Mark 9:24 — 'I do believe; help me overcome my unbelief!'"
+                }, {
+                    advice: "It's okay to question. God is not afraid of your doubts. He invites you to seek wisdom. Take a step back, pray, and trust that He will guide you one step at a time.",
+                    verse: "James 1:5 — 'If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.'"
+                }, {
+                    advice: "When you doubt, remember God's faithfulness in the past. He has never failed you, and He won't start now. Hold onto His promises.",
+                    verse: "Hebrews 10:23 — 'Let us hold unswervingly to the hope we profess, for he who promised is faithful.'"
+                }]
+            },
+
+            // ----- BETRAYAL / CHEATING / INFIDELITY (expanded) -----
+            betrayal: {
+                keywords: ['betrayed', 'betrayal', 'deceived', 'hurt', 'wounded', 'unfaithful', 'cheated', 'backstabbed',
+                    'mistreated', 'used', 'abused', 'broken', 'double-crossed', 'lied to', 'cheating', 'infidelity',
+                    'adultery', 'affair', 'unfaithfulness', 'broken trust', 'lied to me', 'deceived me', 'cheated on me',
+                    'my partner cheated', 'spouse cheated', 'lover cheated', 'emotional affair', 'physical affair',
+                    'caught cheating', 'my husband cheated', 'my wife cheated', 'my boyfriend cheated', 'my girlfriend cheated'
+                ],
+                responses: [{
+                    advice: "I'm so sorry you've been hurt like this. Betrayal cuts deep, and it's hard to trust again. But God is a faithful refuge — He will never betray you. Let Him heal your wounds and show you how to forgive, even when it's hard.",
+                    verse: "Psalm 91:14 — 'Because he loves me, says the Lord, I will rescue him; I will protect him, for he acknowledges my name.'"
+                }, {
+                    advice: "It's okay to feel broken by someone's betrayal. God sees your pain, and He will bring justice and restoration in His time. Hold onto His faithfulness.",
+                    verse: "Psalm 34:18 — 'The Lord is near to the brokenhearted and saves those who are crushed in spirit.'"
+                }, {
+                    advice: "When people fail you, God never will. He is a friend who sticks closer than a brother. Pour out your hurt to Him, and let His love wash over you and bring healing.",
+                    verse: "Psalm 56:8 — 'You keep track of all my sorrows. You have collected all my tears in your bottle. You have recorded each one in your book.'"
+                }]
+            },
+
+            // ----- RELATIONSHIP / LOVE LIFE (expanded) -----
+            relationship: {
+                keywords: ['love life', 'relationship', 'dating', 'marriage', 'boyfriend', 'girlfriend', 'spouse',
+                    'partner', 'breakup', 'divorce', 'separation', 'conflict', 'arguing', 'communication', 'trust issues',
+                    'in love', 'crush', 'heartbreak', 'reconciliation', 'single', 'waiting for a spouse',
+                    'lonely in marriage', 'marriage conflict', 'parenting', 'family problems', 'in-law', 'how to love',
+                    'how to be a good spouse', 'how to save my marriage', 'how to fix my relationship', 'relationship advice',
+                    'love advice', 'marriage advice', 'engagement', 'proposal', 'dating advice', 'couple', 'together'
+                ],
+                responses: [{
+                    advice: "Relationships can be both beautiful and challenging. God designed love to reflect His heart. Whether you're single, dating, engaged, or married, He wants you to love with patience, kindness, and truth. If you're struggling, seek wise counsel, pray together, and be honest with each other.",
+                    verse: "1 Corinthians 13:4-5 — 'Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.'"
+                }, {
+                    advice: "If you're facing a relationship crisis, don't lose hope. God can restore what's broken. But sometimes He also closes doors to protect us. Seek His wisdom in prayer, talk to a trusted counselor, and be willing to forgive and ask for forgiveness. Your worth is not defined by your relationship status — you are complete in Christ.",
+                    verse: "Proverbs 3:5-6 — 'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.'"
+                }, {
+                    advice: "Loneliness in a relationship can feel worse than being alone. Don't give up on open communication. Share your heart gently, listen carefully, and invite God into your conversations. He is the healer of all wounds.",
+                    verse: "James 1:19 — 'Everyone should be quick to listen, slow to speak and slow to become angry.'"
+                }, {
+                    advice: "If you're going through a breakup or divorce, allow yourself to grieve. God sees your pain and wants to comfort you. He has a plan for your future, even when it feels uncertain. Lean on Him, and let His love fill the empty spaces.",
+                    verse: "Psalm 34:18 — 'The Lord is near to the brokenhearted and saves those who are crushed in spirit.'"
+                }]
+            },
+
+            // ----- FINANCIAL PROBLEMS (expanded) -----
+            financial: {
+                keywords: ['money', 'debt', 'bills', 'poor', 'bankrupt', 'financial', 'job loss', 'unemployed',
+                    'struggling financially', 'can\'t pay', 'rent', 'mortgage', 'savings', 'financial stress',
+                    'loan', 'credit', 'paycheck', 'budget', 'poverty', 'hunger', 'homelessness'
+                ],
+                responses: [{
+                    advice: "Financial stress is so heavy, but God is your provider. He owns the cattle on a thousand hills, and He cares for you. Don't lose hope — seek His wisdom in your finances, be faithful with what you have, and trust Him to open doors. He will supply all your needs according to His riches.",
+                    verse: "Philippians 4:19 — 'And my God will meet all your needs according to the riches of his glory in Christ Jesus.'"
+                }, {
+                    advice: "Money problems can feel overwhelming, but remember that God is your source. He promises to provide for you, even when it seems impossible. Take practical steps, seek wise counsel, and pray for provision.",
+                    verse: "Matthew 6:31-33 — 'So do not worry, saying, "What shall we eat?" or "What shall we drink?" or "What shall we wear?"... But seek first his kingdom and his righteousness, and all these things will be given to you as well.'"
+                }, {
+                    advice: "God sees your financial struggles, and He has not abandoned you. He will provide a way, even when you can't see it. Keep trusting, keep praying, and take one day at a time.",
+                    verse: "Psalm 37:25 — 'I was young and now I am old, yet I have never seen the righteous forsaken or their children begging bread.'"
+                }]
+            },
+
+            // ----- HEALTH & ILLNESS (expanded) -----
+            health: {
+                keywords: ['sick', 'illness', 'disease', 'pain', 'suffering', 'hospital', 'surgery', 'recovery',
+                    'cancer', 'chronic illness', 'disability', 'injury', 'weak', 'unwell', 'doctor', 'medicine',
+                    'treatment', 'diagnosis', 'terminal', 'cure', 'healing', 'sickness', 'virus', 'fever', 'flu'
+                ],
+                responses: [{
+                    advice: "I'm sorry you're dealing with illness or pain. God is the great physician, and He cares about your physical and emotional well-being. Ask Him for healing, trust His plan, and lean on others for support. He is with you in every struggle.",
+                    verse: "Jeremiah 30:17 — 'But I will restore you to health and heal your wounds, declares the Lord.'"
+                }, {
+                    advice: "When your body is weak, God's strength is made perfect. He will carry you through this season. Take rest, seek medical care, and trust that He is working even in your pain.",
+                    verse: "2 Corinthians 12:9 — 'My grace is sufficient for you, for my power is made perfect in weakness.'"
+                }, {
+                    advice: "God knows every tear and every ache. He is close to the brokenhearted and the sick. Lean on Him, and let His peace guard your heart even in the waiting.",
+                    verse: "Psalm 34:18 — 'The Lord is near to the brokenhearted and saves those who are crushed in spirit.'"
+                }]
+            },
+
+            // ----- LOSS & DEATH (expanded) -----
+            loss: {
+                keywords: ['death', 'died', 'passed away', 'loss', 'grieving', 'funeral', 'gone', 'bereavement',
+                    'lost someone', 'miss them', 'deceased', 'mourning', 'memorial', 'cemetery', 'heaven'
+                ],
+                responses: [{
+                    advice: "I'm so sorry for your loss. Grief is heavy, and it takes time. God is close to the brokenhearted, and He promises to comfort you. He will wipe every tear from your eyes. Let yourself grieve, and know that you are not alone.",
+                    verse: "Matthew 5:4 — 'Blessed are those who mourn, for they will be comforted.'"
+                }, {
+                    advice: "Death is not the end for those who belong to Christ. There is hope in the resurrection. Your loved one is at peace in God's presence, and you will see them again. Until then, let God's comfort hold you.",
+                    verse: "John 11:25-26 — 'Jesus said to her, "I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die."'"
+                }, {
+                    advice: "Grief is a journey, and it's okay to take it slowly. God is patient with you, and He will carry you through each day. Don't be afraid to cry, to remember, and to hope.",
+                    verse: "Psalm 23:4 — 'Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.'"
+                }]
+            },
+
+            // ----- WORK & CAREER (expanded) -----
+            career: {
+                keywords: ['work', 'career', 'job', 'employment', 'promotion', 'interview', 'workplace', 'boss',
+                    'colleagues', 'career path', 'job stress', 'workplace conflict', 'laid off', 'fired', 'salary',
+                    'coworker', 'office', 'profession', 'occupation'
+                ],
+                responses: [{
+                    advice: "Work can be a source of purpose or pressure. Remember that God is your ultimate boss, and He has called you to work as unto Him. Whether you're thriving or struggling, He is with you. Seek His wisdom and ask Him to guide your career path.",
+                    verse: "Colossians 3:23 — 'Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.'"
+                }, {
+                    advice: "If you're feeling overwhelmed at work, take a step back and pray. God cares about your career and wants to help you succeed. Ask for wisdom, and trust Him to open doors.",
+                    verse: "Proverbs 16:3 — 'Commit to the Lord whatever you do, and he will establish your plans.'"
+                }, {
+                    advice: "Your work has value because you have value. God is with you in every project, every meeting, and every challenge. Lean on Him for strength and guidance.",
+                    verse: "Psalm 90:17 — 'May the favor of the Lord our God rest on us; establish the work of our hands for us— yes, establish the work of our hands.'"
+                }]
+            },
+
+            // ----- DECISION MAKING (expanded) -----
+            decisions: {
+                keywords: ['decision', 'choose', 'choice', 'decide', 'undecided', 'should i', 'what should i',
+                    'help me decide', 'confused about path', 'direction', 'plan', 'future', 'uncertainty'
+                ],
+                responses: [{
+                    advice: "Big decisions can feel overwhelming. God is not confused — He knows the way forward. Seek His guidance through prayer, scripture, and wise counsel. Trust that He will make your path clear.",
+                    verse: "Proverbs 3:5-6 — 'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.'"
+                }, {
+                    advice: "When you're unsure of what to do, pray for wisdom and wait on God's peace. He will guide you step by step. Don't rush, and trust that He has your best interests at heart.",
+                    verse: "James 1:5 — 'If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.'"
+                }, {
+                    advice: "Decisions are easier when you focus on what honors God. Ask yourself: 'Does this align with His Word?' and 'Will this draw me closer to Him?' Let those questions guide your choices.",
+                    verse: "Romans 12:2 — 'Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will.'"
+                }]
+            },
+
+            // ----- QUESTIONS ABOUT GOD (expanded) -----
+            questions: {
+                keywords: ['why is this happening', 'why me', 'why does god allow', 'does god love me', 'is god real',
+                    'is god listening', 'can god forgive me', 'can god heal me', 'can god change me',
+                    'what is god\'s will', 'how do i know god\'s will', 'how do i hear god', 'how do i pray',
+                    'how do i become a christian', 'how do i trust god', 'how do i overcome', 'how do i stop sinning',
+                    'how do i find peace', 'how do i be happy', 'what is my purpose', 'why am i here',
+                    'how do i forgive someone', 'how do i deal with', 'who is jesus', 'what is salvation'
+                ],
+                responses: [{
+                    advice: "These are deep and important questions. God is not afraid of your doubts or your curiosity. He invites you to seek Him with all your heart. Keep asking, keep seeking, and keep knocking — He promises to answer.",
+                    verse: "Matthew 7:7-8 — 'Ask and it will be given to you; seek and you will find; knock and the door will be opened to you. For everyone who asks receives; the one who seeks finds; and to the one who knocks, the door will be opened.'"
+                }, {
+                    advice: "God's love for you is unconditional and eternal. He proved it by sending Jesus to die for you. No matter what you've done, He is ready to forgive and welcome you with open arms.",
+                    verse: "Romans 8:38-39 — 'For I am convinced that neither death nor life... nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.'"
+                }, {
+                    advice: "God hears every prayer. You don't need fancy words — just speak from your heart. He is always listening, and He will answer in the best way and at the best time.",
+                    verse: "Jeremiah 29:12 — 'Then you will call on me and come and pray to me, and I will listen to you.'"
+                }]
+            },
+
+            // ----- "I DON'T KNOW" (expanded) -----
+            idontknow: {
+                keywords: ['i don\'t know', 'idk', 'not sure', 'don\'t know', 'unsure', 'no idea', 'don\'t know what to feel',
+                    'i don\'t know what to do', 'i don\'t know how to pray', 'i don\'t know how to forgive',
+                    'i don\'t know how to trust', 'i don\'t know what to believe', 'i don\'t know where to start',
+                    'i don\'t know what to say'
+                ],
+                responses: [{
+                    advice: "It's okay not to know. Feelings can be complicated, and sometimes we don't have the words to describe what's happening inside. God understands your heart even when you can't find the words. Just be still with Him — He knows.",
+                    verse: "Romans 8:26 — 'In the same way, the Spirit helps us in our weakness. We do not know what we ought to pray for, but the Spirit himself intercedes for us through wordless groans.'"
+                }, {
+                    advice: "Not having a name for what you feel doesn't make it any less real. You don't have to figure it all out today. Just bring yourself — all of you — to God. He can handle the confusion.",
+                    verse: "Proverbs 3:5-6 — 'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.'"
+                }, {
+                    advice: "Sometimes the most honest prayer is 'I don't know.' That's enough. God is listening, and He knows what you need before you ask.",
+                    verse: "Matthew 6:8 — 'Your Father knows what you need before you ask him.'"
+                }]
+            },
+
+            // ----- "I'M NOT OKAY" (expanded) -----
+            notokay: {
+                keywords: ['not okay', 'not fine', 'struggling', 'falling apart', 'losing it', 'can\'t cope',
+                    'i need help', 'i\'m lost', 'i\'m broken', 'i\'m empty', 'i\'m tired', 'i give up', 'i can\'t do this',
+                    'help me', 'broken', 'i need support', 'i need someone', 'i need a friend', 'i need a hug'
+                ],
+                responses: [{
+                    advice: "It's okay not to be okay. You don't have to have it all together. God meets you right where you are — in the mess, in the confusion, in the pain. Just breathe, and know that He is with you.",
+                    verse: "Psalm 34:18 — 'The Lord is near to the brokenhearted and saves those who are crushed in spirit.'"
+                }, {
+                    advice: "When you don't have words, God still hears your heart. You can come to Him just as you are — tired, confused, and hurting. He will give you rest.",
+                    verse: "Matthew 11:28 — 'Come to me, all you who are weary and burdened, and I will give you rest.'"
+                }, {
+                    advice: "I'm here for you. It's okay if you don't know exactly what you're feeling right now. God understands. He will hold you steady even when everything feels shaky.",
+                    verse: "Psalm 46:5 — 'God is within her, she will not fall; God will help her at break of day.'"
+                }]
+            },
+
+            // ----- PERSONAL INFO: BREEZY, JOJO, APRIL, LOCATION -----
+            about: {
+                keywords: ['who is breezy', 'what is breezy', 'breezy', 'jojo kalim', 'jojo', 'kalim', 'april joy contiga',
+                    'april contiga', 'april', 'contiga', 'camingawan', 'kabankalan', 'where do you live',
+                    'where are you from', 'your creator', 'who made you', 'author', 'developer', 'girlfriend'
+                ],
+                responses: [{
+                    advice: "Breezy is an emotional support AI created by **Jojo Kalim** ❤️. Jojo lives in **Brgy. Camingawan, Kabankalan City**. His beautiful girlfriend is **April Joy Contiga** — she's the most wonderful person in his life! Breezy was built to help people find comfort, hope, and encouragement through God's Word, all from the heart of Jojo's love for April and for God.",
+                    verse: "Proverbs 18:22 — 'He who finds a wife finds what is good and receives favor from the Lord.' (And Jojo found April!)"
+                }, {
+                    advice: "Jojo Kalim is the creator of Breezy. He lives in Brgy. Camingawan, Kabankalan City, and he's deeply in love with his girlfriend, April Joy Contiga. She's the inspiration behind this project — because love makes us want to help others. ❤️",
+                    verse: "1 Corinthians 13:13 — 'And now these three remain: faith, hope and love. But the greatest of these is love.'"
+                }, {
+                    advice: "Breezy is Jojo's gift to the world — a reminder that God loves us and that we can find peace in Him. Jojo's location is Brgy. Camingawan, Kabankalan City, and his heart belongs to April Joy Contiga, the most beautiful girl in his eyes. 😊",
+                    verse: "Song of Solomon 8:7 — 'Many waters cannot quench love; rivers cannot sweep it away.'"
+                }]
             }
-        }
+        };
 
-        document.getElementById('registerSWBtn').addEventListener('click', async function() {
-            const result = await registerServiceWorker();
-            if (result) {
-                this.innerHTML = '<i class="fas fa-check"></i> Active';
-                this.className = 'btn btn-success';
-                alert('✅ Background mode enabled!\n\nAlarms will work even when the app is closed.\n\nFor best results, add to home screen.');
-            } else {
-                alert('⚠️ Background unavailable.\n\nPlease:\n1. Allow notifications\n2. Use Chrome/Samsung Internet\n3. Add to home screen');
-            }
+        // ============================================================
+        // CHAT LOGIC — SIMPLIFIED & ROBUST
+        // ============================================================
+
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        document.getElementById('backBtn').addEventListener('click', function() {
+            window.location.href = 'index.html';
         });
 
-        // ============================================================
-        // BIBLE DATA - 80+ verses
-        // ============================================================
-        const bibleVerses = [
-            { ref: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },
-            { ref: "Psalm 23:4", text: "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me." },
-            { ref: "Psalm 27:1", text: "The Lord is my light and my salvation— whom shall I fear? The Lord is the stronghold of my life— of whom shall I be afraid?" },
-            { ref: "Psalm 34:18", text: "The Lord is near to the brokenhearted and saves those who are crushed in spirit." },
-            { ref: "Psalm 46:1", text: "God is our refuge and strength, an ever-present help in trouble." },
-            { ref: "Psalm 46:10", text: "Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth." },
-            { ref: "Psalm 55:22", text: "Cast your cares on the Lord and he will sustain you; he will never let the righteous be shaken." },
-            { ref: "Psalm 91:1-2", text: "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty. I will say of the Lord, 'He is my refuge and my fortress, my God, in whom I trust.'" },
-            { ref: "Psalm 118:24", text: "The Lord has done it this very day; let us rejoice today and be glad." },
-            { ref: "Psalm 121:1-2", text: "I lift up my eyes to the mountains— where does my help come from? My help comes from the Lord, the Maker of heaven and earth." },
-            { ref: "Psalm 136:1", text: "Give thanks to the Lord, for he is good. His love endures forever." },
-            { ref: "Proverbs 3:5-6", text: "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight." },
-            { ref: "Proverbs 16:3", text: "Commit to the Lord whatever you do, and he will establish your plans." },
-            { ref: "Proverbs 17:22", text: "A cheerful heart is good medicine, but a crushed spirit dries up the bones." },
-            { ref: "Isaiah 40:31", text: "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint." },
-            { ref: "Isaiah 41:10", text: "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand." },
-            { ref: "Isaiah 43:2", text: "When you pass through the waters, I will be with you; and when you pass through the rivers, they will not sweep over you." },
-            { ref: "Jeremiah 29:11", text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future." },
-            { ref: "Lamentations 3:22-23", text: "Because of the Lord's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness." },
-            { ref: "Matthew 5:4", text: "Blessed are those who mourn, for they will be comforted." },
-            { ref: "Matthew 6:34", text: "Therefore do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own." },
-            { ref: "Matthew 11:28", text: "Come to me, all you who are weary and burdened, and I will give you rest." },
-            { ref: "Mark 11:24", text: "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours." },
-            { ref: "John 3:16", text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." },
-            { ref: "John 14:27", text: "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid." },
-            { ref: "John 16:33", text: "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world." },
-            { ref: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose." },
-            { ref: "Romans 8:38-39", text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord." },
-            { ref: "Romans 12:12", text: "Be joyful in hope, patient in affliction, faithful in prayer." },
-            { ref: "Romans 15:13", text: "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit." },
-            { ref: "1 Corinthians 13:4-5", text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs." },
-            { ref: "1 Corinthians 16:14", text: "Do everything in love." },
-            { ref: "2 Corinthians 1:3-4", text: "Praise be to the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort, who comforts us in all our troubles." },
-            { ref: "2 Corinthians 5:17", text: "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" },
-            { ref: "2 Corinthians 12:9", text: "My grace is sufficient for you, for my power is made perfect in weakness." },
-            { ref: "Galatians 5:22-23", text: "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control." },
-            { ref: "Ephesians 2:8", text: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God." },
-            { ref: "Ephesians 4:32", text: "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." },
-            { ref: "Philippians 4:6-7", text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus." },
-            { ref: "Philippians 4:13", text: "I can do all this through him who gives me strength." },
-            { ref: "Colossians 3:2", text: "Set your minds on things above, not on earthly things." },
-            { ref: "Colossians 3:12", text: "Therefore, as God's chosen people, holy and dearly loved, clothe yourselves with compassion, kindness, humility, gentleness and patience." },
-            { ref: "1 Thessalonians 5:16-18", text: "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus." },
-            { ref: "2 Timothy 1:7", text: "For God has not given us a spirit of fear, but of power and of love and of a sound mind." },
-            { ref: "Hebrews 11:1", text: "Now faith is confidence in what we hope for and assurance about what we do not see." },
-            { ref: "Hebrews 13:5", text: "Keep your lives free from the love of money and be content with what you have, because God has said, 'Never will I leave you; never will I forsake you.'" },
-            { ref: "James 1:5", text: "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you." },
-            { ref: "James 5:13", text: "Is anyone among you in trouble? Let them pray. Is anyone happy? Let them sing songs of praise." },
-            { ref: "1 Peter 5:7", text: "Cast all your anxiety on him because he cares for you." },
-            { ref: "1 John 1:9", text: "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness." },
-            { ref: "1 John 4:8", text: "Whoever does not love does not know God, because God is love." },
-            { ref: "1 John 4:19", text: "We love because he first loved us." },
-            { ref: "Revelation 21:4", text: "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away." },
-            { ref: "Psalm 34:8", text: "Taste and see that the Lord is good; blessed is the one who takes refuge in him." },
-            { ref: "Psalm 37:4", text: "Take delight in the Lord, and he will give you the desires of your heart." },
-            { ref: "Psalm 119:105", text: "Your word is a lamp for my feet, a light on my path." },
-            { ref: "Proverbs 18:10", text: "The name of the Lord is a fortified tower; the righteous run to it and are safe." },
-            { ref: "Isaiah 43:19", text: "See, I am doing a new thing! Now it springs up; do you not perceive it? I am making a way in the wilderness and streams in the wasteland." },
-            { ref: "Romans 15:13", text: "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit." },
-            { ref: "2 Corinthians 9:8", text: "And God is able to bless you abundantly, so that in all things at all times you may have all that you need, you will abound in every good work." },
-            { ref: "Ephesians 3:20", text: "Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us." },
-            { ref: "Psalm 16:8", text: "I keep my eyes always on the Lord. With him at my right hand, I will not be shaken." },
-            { ref: "Psalm 20:7", text: "Some trust in chariots and some in horses, but we trust in the name of the Lord our God." },
-            { ref: "Psalm 31:24", text: "Be strong and take heart, all you who hope in the Lord." },
-            { ref: "Psalm 33:20", text: "We wait in hope for the Lord; he is our help and our shield." },
-            { ref: "Psalm 40:1", text: "I waited patiently for the Lord; he turned to me and heard my cry." },
-            { ref: "Psalm 50:15", text: "Call me in the day of trouble; I will deliver you, and you will honor me." },
-            { ref: "Psalm 56:3", text: "When I am afraid, I put my trust in you." },
-            { ref: "Psalm 62:8", text: "Trust in him at all times, you people; pour out your hearts to him, for God is our refuge." },
-            { ref: "Psalm 73:26", text: "My flesh and my heart may fail, but God is the strength of my heart and my portion forever." },
-            { ref: "Psalm 86:11", text: "Teach me your way, Lord, that I may rely on your faithfulness; give me an undivided heart." },
-            { ref: "Psalm 94:19", text: "When anxiety was great within me, your consolation brought me joy." },
-            { ref: "Psalm 103:1", text: "Praise the Lord, my soul; all my inmost being, praise his holy name." },
-            { ref: "Psalm 107:1", text: "Give thanks to the Lord, for he is good; his love endures forever." },
-            { ref: "Psalm 116:1", text: "I love the Lord, for he heard my voice; he heard my cry for mercy." },
-            { ref: "Psalm 138:3", text: "When I called, you answered me; you greatly emboldened me." },
-            { ref: "Proverbs 4:23", text: "Above all else, guard your heart, for everything you do flows from it." },
-            { ref: "Isaiah 40:8", text: "The grass withers and the flowers fall, but the word of our God endures forever." },
-            { ref: "Isaiah 41:13", text: "For I am the Lord your God who takes hold of your right hand and says to you, Do not fear; I will help you." },
-            { ref: "Isaiah 43:1", text: "Do not fear, for I have redeemed you; I have summoned you by name; you are mine." },
-            { ref: "Isaiah 53:5", text: "He was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed." },
-            { ref: "Jeremiah 31:3", text: "I have loved you with an everlasting love; I have drawn you with unfailing kindness." }
-        ];
-
-        // ============================================================
-        // STATE MANAGEMENT
-        // ============================================================
-        const STORAGE_KEY = 'devotionState';
-
-        function getDefaultState() {
-            const today = new Date().toDateString();
-            return {
-                date: today,
-                times: {
-                    morning: 360,
-                    afternoon: 720,
-                    evening: 1200
-                },
-                morning: { verseIndex: null, shown: false },
-                afternoon: { verseIndex: null, shown: false },
-                evening: { verseIndex: null, shown: false },
-                usedIndices: [],
-                alarmTriggered: false,
-                alarmSlot: null
-            };
-        }
-
-        let state = loadState();
-
-        function loadState() {
-            try {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved) {
-                    const parsed = JSON.parse(saved);
-                    const today = new Date().toDateString();
-                    if (parsed.date === today) {
-                        return parsed;
-                    }
-                }
-            } catch (e) { /* ignore */ }
-            return getDefaultState();
-        }
-
-        function saveState() {
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-            } catch (e) { /* ignore */ }
-        }
-
-        // ============================================================
-        // VERSE MANAGEMENT - Random cycle
-        // ============================================================
-        function getUniqueVerse() {
-            const total = bibleVerses.length;
-            if (state.usedIndices.length >= total) {
-                state.usedIndices = [];
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) {
+                addMessage('bot', "I'm here to listen. ❤️ What's on your mind today?");
+                return;
             }
-
-            const available = [];
-            for (let i = 0; i < total; i++) {
-                if (!state.usedIndices.includes(i)) {
-                    available.push(i);
-                }
-            }
-
-            if (available.length === 0) {
-                state.usedIndices = [];
-                return 0;
-            }
-
-            const randomIdx = available[Math.floor(Math.random() * available.length)];
-            state.usedIndices.push(randomIdx);
-            saveState();
-            return randomIdx;
+            addMessage('user', text);
+            userInput.value = '';
+            userInput.focus();
+            typingIndicator.classList.add('show');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            setTimeout(() => {
+                typingIndicator.classList.remove('show');
+                const reply = generateReply(text);
+                addMessage('bot', reply);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500 + Math.random() * 400);
         }
 
-        function getVerseForSlot(slotName) {
-            const slot = state[slotName];
-            if (!slot || slot.verseIndex === null || slot.verseIndex === undefined) {
-                const idx = getUniqueVerse();
-                slot.verseIndex = idx;
-                slot.shown = false;
-                saveState();
-                return idx;
-            }
-            return slot.verseIndex;
-        }
-
-        function markSlotShown(slotName) {
-            const slot = state[slotName];
-            if (slot) {
-                slot.shown = true;
-                saveState();
-                updateUI();
-            }
-        }
-
-        function resetSlotShown(slotName) {
-            const slot = state[slotName];
-            if (slot) {
-                slot.shown = false;
-                saveState();
-                updateUI();
-            }
-        }
-
-        // ============================================================
-        // TIME HELPERS
-        // ============================================================
-        function minutesToTimeStr(minutes) {
-            const h = Math.floor(minutes / 60);
-            const m = minutes % 60;
-            const ampm = h >= 12 ? 'PM' : 'AM';
-            const h12 = h % 12 || 12;
-            return `${h12}:${String(m).padStart(2, '0')} ${ampm}`;
-        }
-
-        function getCurrentMinutes() {
+        function addMessage(type, text) {
+            const wrapper = document.createElement('div');
+            wrapper.className = `message-wrapper ${type}`;
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.innerHTML = type === 'bot' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
+            wrapper.appendChild(avatar);
+            const bubble = document.createElement('div');
+            bubble.className = 'message';
+            const textSpan = document.createElement('div');
+            textSpan.style.whiteSpace = 'pre-wrap';
+            textSpan.textContent = text;
+            bubble.appendChild(textSpan);
+            const meta = document.createElement('div');
+            meta.className = 'msg-meta';
             const now = new Date();
-            return now.getHours() * 60 + now.getMinutes();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            meta.innerHTML = type === 'bot' ? `Breezy · ${timeStr}` : `${timeStr} · You`;
+            bubble.appendChild(meta);
+            wrapper.appendChild(bubble);
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
         // ============================================================
-        // ALARM SOUND - Long, persistent
+        // GENERATE REPLY — ALWAYS RETURNS A RESPONSE
         // ============================================================
-        let alarmAudioCtx = null;
-        let alarmOscillators = [];
-        let alarmIntervalId = null;
-        let isAlarmPlaying = false;
 
-        function startLongAlarm() {
-            if (isAlarmPlaying) return;
-
+        function generateReply(query) {
             try {
-                if (!alarmAudioCtx) {
-                    alarmAudioCtx = new(window.AudioContext || window.webkitAudioContext)();
+                const lower = query.toLowerCase().trim();
+
+                // ----- 1. Check for personal info (about) -----
+                const aboutCheck = feelingsData.about;
+                let aboutScore = 0;
+                for (const kw of aboutCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        aboutScore += 20;
+                    }
+                }
+                if (aboutScore >= 15) {
+                    const resp = aboutCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `ℹ️ ${chosen.advice}\n\n📖 ${chosen.verse}`;
                 }
 
-                if (alarmAudioCtx.state === 'suspended') {
-                    alarmAudioCtx.resume();
-                }
-
-                isAlarmPlaying = true;
-
-                function playChimePattern() {
-                    if (!isAlarmPlaying) return;
-                    const now = alarmAudioCtx.currentTime;
-
-                    const notes = [
-                        { freq: 523.25, time: 0, duration: 0.6, vol: 0.10 },
-                        { freq: 659.25, time: 0.2, duration: 0.5, vol: 0.08 },
-                        { freq: 783.99, time: 0.4, duration: 0.5, vol: 0.08 },
-                        { freq: 1046.50, time: 0.7, duration: 0.8, vol: 0.06 },
-                        { freq: 880.00, time: 1.1, duration: 0.6, vol: 0.05 },
-                        { freq: 659.25, time: 1.5, duration: 0.8, vol: 0.05 }
+                // ----- 2. Check for "surprise me with a verse" -----
+                if (/surprise me|random verse|give me a verse|show me a verse|encourage me today|verse please/i.test(
+                        lower)) {
+                    const verses = [
+                        "🌟 Here's a verse for you:\n\n📖 **Isaiah 41:10** — 'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.'\n\nYou are not alone. God is with you today. 🙏",
+                        "💪 You can do all things through Christ who strengthens you.\n\n📖 **Philippians 4:13** — 'I can do all this through him who gives me strength.'\n\nKeep going! God is your strength.",
+                        "🌅 God has plans to prosper you and give you hope.\n\n📖 **Jeremiah 29:11** — 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.'\n\nHold on to that hope!",
+                        "🕊️ Peace I leave with you; my peace I give you.\n\n📖 **John 14:27** — 'Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.'\n\nLet peace fill your heart today.",
+                        "❤️ Nothing can separate you from God's love.\n\n📖 **Romans 8:38-39** — 'For I am convinced that neither death nor life... nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.'\n\nYou are deeply loved!"
                     ];
+                    return verses[Math.floor(Math.random() * verses.length)];
+                }
 
-                    notes.forEach(n => {
-                        const osc = alarmAudioCtx.createOscillator();
-                        const gain = alarmAudioCtx.createGain();
-                        osc.type = 'sine';
-                        const detune = (Math.random() - 0.5) * 4;
-                        osc.frequency.value = n.freq + detune;
-                        gain.gain.setValueAtTime(n.vol, now + n.time);
-                        gain.gain.exponentialRampToValueAtTime(0.001, now + n.time + n.duration);
-                        osc.connect(gain);
-                        gain.connect(alarmAudioCtx.destination);
-                        alarmOscillators.push(osc);
-                        osc.start(now + n.time);
-                        osc.stop(now + n.time + n.duration + 0.1);
-                    });
+                // ----- 3. Check for sin/confession (high priority) -----
+                const sinCheck = feelingsData.sin;
+                let sinScore = 0;
+                for (const kw of sinCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        sinScore += 10;
+                    }
+                }
+                if (sinScore >= 8) {
+                    const resp = sinCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `🙏 I hear your confession. ${chosen.advice}\n\n📖 ${chosen.verse}\n\nYou are forgiven. 💖`;
+                }
 
-                    const pad = alarmAudioCtx.createOscillator();
-                    const padGain = alarmAudioCtx.createGain();
-                    pad.type = 'sine';
-                    pad.frequency.value = 392;
-                    padGain.gain.setValueAtTime(0.03, now);
-                    padGain.gain.exponentialRampToValueAtTime(0.001, now + 2.5);
-                    pad.connect(padGain);
-                    padGain.connect(alarmAudioCtx.destination);
-                    alarmOscillators.push(pad);
-                    pad.start(now);
-                    pad.stop(now + 2.6);
+                // ----- 4. Check for doubt -----
+                const doubtCheck = feelingsData.doubt;
+                let doubtScore = 0;
+                for (const kw of doubtCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        doubtScore += 10;
+                    }
+                }
+                if (doubtScore >= 8) {
+                    const resp = doubtCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `❓ ${chosen.advice}\n\n📖 ${chosen.verse}`;
+                }
 
-                    for (let i = 0; i < 4; i++) {
-                        const osc2 = alarmAudioCtx.createOscillator();
-                        const gain2 = alarmAudioCtx.createGain();
-                        osc2.type = 'sine';
-                        const baseFreq = 500 + Math.random() * 400;
-                        osc2.frequency.value = baseFreq;
-                        gain2.gain.setValueAtTime(0.02, now + 0.8 + i * 0.3);
-                        gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.8 + i * 0.3 + 0.4);
-                        osc2.connect(gain2);
-                        gain2.connect(alarmAudioCtx.destination);
-                        alarmOscillators.push(osc2);
-                        osc2.start(now + 0.8 + i * 0.3);
-                        osc2.stop(now + 0.8 + i * 0.3 + 0.5);
+                // ----- 5. Check for infidelity / betrayal -----
+                const betrayalCheck = feelingsData.betrayal;
+                let betrayalScore = 0;
+                for (const kw of betrayalCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        betrayalScore += 15;
+                    }
+                }
+                if (betrayalScore >= 10) {
+                    const resp = betrayalCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `💔 I hear your pain. ${chosen.advice}\n\n📖 ${chosen.verse}\n\nYou are not alone. 🙏`;
+                }
+
+                // ----- 6. Check for relationship -----
+                const relCheck = feelingsData.relationship;
+                let relScore = 0;
+                for (const kw of relCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        relScore += 12;
+                    }
+                }
+                if (relScore >= 10) {
+                    const resp = relCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `❤️ I hear you. ${chosen.advice}\n\n📖 ${chosen.verse}\n\nTrust God with your love life. 💕`;
+                }
+
+                // ----- 7. Financial -----
+                const finCheck = feelingsData.financial;
+                let finScore = 0;
+                for (const kw of finCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        finScore += 10;
+                    }
+                }
+                if (finScore >= 8) {
+                    const resp = finCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `💰 ${chosen.advice}\n\n📖 ${chosen.verse}\n\nGod is your provider. 🙏`;
+                }
+
+                // ----- 8. Health -----
+                const healthCheck = feelingsData.health;
+                let healthScore = 0;
+                for (const kw of healthCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        healthScore += 10;
+                    }
+                }
+                if (healthScore >= 8) {
+                    const resp = healthCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `🩺 ${chosen.advice}\n\n📖 ${chosen.verse}\n\nGod is with you in this. ❤️`;
+                }
+
+                // ----- 9. Loss -----
+                const lossCheck = feelingsData.loss;
+                let lossScore = 0;
+                for (const kw of lossCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        lossScore += 10;
+                    }
+                }
+                if (lossScore >= 8) {
+                    const resp = lossCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `🕊️ ${chosen.advice}\n\n📖 ${chosen.verse}\n\nYou are not alone in your grief. 🙏`;
+                }
+
+                // ----- 10. Career -----
+                const careerCheck = feelingsData.career;
+                let careerScore = 0;
+                for (const kw of careerCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        careerScore += 10;
+                    }
+                }
+                if (careerScore >= 8) {
+                    const resp = careerCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `💼 ${chosen.advice}\n\n📖 ${chosen.verse}\n\nGod is with you in your work. 🌟`;
+                }
+
+                // ----- 11. Decisions -----
+                const decCheck = feelingsData.decisions;
+                let decScore = 0;
+                for (const kw of decCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        decScore += 10;
+                    }
+                }
+                if (decScore >= 8) {
+                    const resp = decCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `🤔 ${chosen.advice}\n\n📖 ${chosen.verse}\n\nGod will guide you. 🙏`;
+                }
+
+                // ----- 12. Questions about God -----
+                const questCheck = feelingsData.questions;
+                let questScore = 0;
+                for (const kw of questCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        questScore += 10;
+                    }
+                }
+                if (questScore >= 8) {
+                    const resp = questCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `❓ ${chosen.advice}\n\n📖 ${chosen.verse}`;
+                }
+
+                // ----- 13. "I don't know" -----
+                const idkCheck = feelingsData.idontknow;
+                let idkScore = 0;
+                for (const kw of idkCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        idkScore += 10;
+                    }
+                }
+                if (idkScore >= 8) {
+                    const resp = idkCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `${chosen.advice}\n\n📖 ${chosen.verse}`;
+                }
+
+                // ----- 14. "Not okay" -----
+                const notokCheck = feelingsData.notokay;
+                let notokScore = 0;
+                for (const kw of notokCheck.keywords) {
+                    if (lower.includes(kw)) {
+                        notokScore += 10;
+                    }
+                }
+                if (notokScore >= 8) {
+                    const resp = notokCheck.responses;
+                    const chosen = resp[Math.floor(Math.random() * resp.length)];
+                    return `🫂 ${chosen.advice}\n\n📖 ${chosen.verse}\n\nYou are not alone. 🙏`;
+                }
+
+                // ----- 15. General emotion detection -----
+                let detectedEmotion = null;
+                let bestScore = 0;
+                // Skip categories we already checked
+                const skipCategories = ['about', 'sin', 'doubt', 'betrayal', 'relationship', 'financial', 'health', 'loss',
+                    'career', 'decisions', 'questions', 'idontknow', 'notokay'
+                ];
+                for (const [key, emotion] of Object.entries(feelingsData)) {
+                    if (skipCategories.includes(key)) continue;
+                    let score = 0;
+                    for (const kw of emotion.keywords) {
+                        if (lower.includes(kw)) {
+                            const regex = new RegExp('\\b' + kw.replace(/'/g, "\\'") + '\\b', 'i');
+                            if (regex.test(lower)) {
+                                score += 15;
+                            } else {
+                                score += 8;
+                            }
+                        }
+                    }
+                    for (const kw of emotion.keywords) {
+                        const patterns = ['feel ' + kw, 'feeling ' + kw, 'felt ' + kw, 'am ' + kw, 'so ' + kw, 'very ' + kw,
+                            'feel like ' + kw, 'feeling like ' + kw
+                        ];
+                        for (const p of patterns) {
+                            if (lower.includes(p)) {
+                                score += 25;
+                            }
+                        }
+                    }
+                    if (score > bestScore) {
+                        bestScore = score;
+                        detectedEmotion = key;
                     }
                 }
 
-                playChimePattern();
-
-                alarmIntervalId = setInterval(() => {
-                    if (!isAlarmPlaying) {
-                        clearInterval(alarmIntervalId);
-                        return;
-                    }
-                    playChimePattern();
-                    if (navigator.vibrate) {
-                        navigator.vibrate([100, 80, 100]);
-                    }
-                }, 3000);
-
-                if (navigator.vibrate) {
-                    navigator.vibrate([100, 80, 100, 80, 150]);
-                }
-
-            } catch (e) {
-                console.log('Alarm sound error:', e);
-            }
-        }
-
-        function stopLongAlarm() {
-            isAlarmPlaying = false;
-            if (alarmIntervalId) {
-                clearInterval(alarmIntervalId);
-                alarmIntervalId = null;
-            }
-            alarmOscillators.forEach(osc => {
-                try { if (osc.stop) osc.stop(); } catch (e) { /* ignore */ }
-            });
-            alarmOscillators = [];
-            if (alarmAudioCtx && alarmAudioCtx.state !== 'closed') {
-                try { alarmAudioCtx.close(); } catch (e) { /* ignore */ }
-                alarmAudioCtx = null;
-            }
-            if (navigator.vibrate) {
-                navigator.vibrate(0);
-            }
-        }
-
-        // ============================================================
-        // NOTIFICATIONS
-        // ============================================================
-        let notificationPermission = false;
-
-        function requestNotificationPermission() {
-            if ('Notification' in window) {
-                if (Notification.permission === 'granted') {
-                    notificationPermission = true;
-                    document.getElementById('permBanner').classList.remove('show');
-                    return true;
-                } else if (Notification.permission === 'denied') {
-                    document.getElementById('permBanner').classList.remove('show');
-                    return false;
-                } else {
-                    document.getElementById('permBanner').classList.add('show');
-                    return false;
-                }
-            }
-            return false;
-        }
-
-        function sendNotification(title, body, verseRef) {
-            if (notificationPermission && 'Notification' in window) {
-                try {
-                    const notification = new Notification(title, {
-                        body: `${body.substring(0, 80)}...\n${verseRef || ''}`,
-                        icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%238a7566" d="M312 192h-112v-16c0-22.086 17.914-40 40-40s22.086 17.914 40 40h16c0-30.928-25.072-56-56-56s-56 25.072-56 56v16h-112v18c0 35.346 28.654 64 64 64h160c35.346 0 64-28.654 64-64v-18zM352 240h-192c-17.673 0-32-14.327-32-32v-16c0-35.346 28.654-64 64-64h128c35.346 0 64 28.654 64 64v16c0 17.673-14.327 32-32 32zM352 104h-192c-26.51 0-48 21.49-48 48v16c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48v-16c0-26.51-21.49-48-48-48z"/></svg>',
-                        badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%238a7566" d="M312 192h-112v-16c0-22.086 17.914-40 40-40s22.086 17.914 40 40h16c0-30.928-25.072-56-56-56s-56 25.072-56 56v16h-112v18c0 35.346 28.654 64 64 64h160c35.346 0 64-28.654 64-64v-18zM352 240h-192c-17.673 0-32-14.327-32-32v-16c0-35.346 28.654-64 64-64h128c35.346 0 64 28.654 64 64v16c0 17.673-14.327 32-32 32zM352 104h-192c-26.51 0-48 21.49-48 48v16c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48v-16c0-26.51-21.49-48-48-48z"/></svg>',
-                        vibrate: [200, 100, 200, 100, 300],
-                        requireInteraction: true,
-                        silent: false,
-                        actions: [
-                            { action: 'open', title: '📖 Open' }
-                        ]
-                    });
-                    notification.onclick = function() {
-                        window.focus();
-                        this.close();
+                if (detectedEmotion && bestScore >= 6) {
+                    const emotion = feelingsData[detectedEmotion];
+                    const responses = emotion.responses;
+                    const chosen = responses[Math.floor(Math.random() * responses.length)];
+                    const emojiMap = {
+                        sad: '😢',
+                        anxious: '😰',
+                        angry: '😤',
+                        fear: '😨',
+                        lonely: '😔',
+                        joy: '😊',
+                        peace: '😌',
+                        gratitude: '🙏',
+                        discouraged: '😞',
+                        guilty: '😣',
+                        loved: '🥰',
+                        confused: '🤔',
+                        stressed: '😩',
+                        insecure: '😥',
+                        jealous: '😒',
+                        hope: '🌟',
+                        faith: '🙌',
+                        courage: '💪',
+                        patience: '⏳'
                     };
-                } catch (e) { /* ignore */ }
-            }
+                    const emoji = emojiMap[detectedEmotion] || '❤️';
+                    const emotionDisplay = detectedEmotion.charAt(0).toUpperCase() + detectedEmotion.slice(1);
+                    const closings = [
+                        "You are loved, and you are never alone. 🙏",
+                        "God is with you, and He will never let you go. 🌟",
+                        "Hold on — hope is on the way. 💪",
+                        "You are precious in His sight. Let that sink in. 💖",
+                        "Take a deep breath. He's got this. 🕊️",
+                        "Don't give up — God is fighting for you. ⚔️",
+                        "You are stronger than you think, because He is with you. 💪",
+                        "Rest in His love today. ❤️"
+                    ];
+                    return `${emoji} I hear that you're feeling **${emotionDisplay}**.\n\n${chosen.advice}\n\n📖 ${chosen.verse}\n\n${closings[Math.floor(Math.random() * closings.length)]}`;
+                }
 
-            // Also play sound
-            startLongAlarm();
-            document.getElementById('alarmIndicator').style.display = 'block';
+                // ----- 16. Greeting -----
+                if (/^(hi|hello|hey|greetings|good morning|good afternoon|good evening|howdy|sup|yo|hey there|hi there)/i
+                    .test(lower) && lower.length < 50) {
+                    return "Hello! I'm Breezy 🤖❤️. I'm here to listen to your heart. Tell me how you're feeling — sad, anxious, angry, lonely, joyful, or anything else — and I'll share encouragement and a Bible verse just for you. What's on your mind today?";
+                }
+
+                // ----- 17. Thanks -----
+                if (/thank|thanks|appreciate|grateful/i.test(lower)) {
+                    const thanks = [
+                        "You're so welcome! ❤️ I'm glad I could encourage you. If you ever need to talk again, I'll be right here. God bless you! 🙏",
+                        "It's my joy to help! Remember, God is always with you. 🌟",
+                        "I'm here anytime you need a listening ear. You are loved! 💖"
+                    ];
+                    return thanks[Math.floor(Math.random() * thanks.length)];
+                }
+
+                // ----- 18. Direct encouragement -----
+                if (/encourage|motivate|uplift|give me hope|need strength|need peace|need joy|lift me up|cheer me up|give me a word/i
+                    .test(lower)) {
+                    const encouragements = [
+                        "🌟 You are stronger than you think, because God's strength is made perfect in weakness.\n\n📖 **Philippians 4:13** — 'I can do all this through him who gives me strength.'\n\nKeep going — God is with you every step of the way. 🙏",
+                        "💪 You are not alone in this fight. God is your refuge and strength.\n\n📖 **Isaiah 41:10** — 'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.'",
+                        "🌅 Hope is not lost. God has plans to prosper you and give you a future.\n\n📖 **Jeremiah 29:11** — 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.'",
+                        "🕊️ Peace I leave with you. Not as the world gives, but as Christ gives.\n\n📖 **John 14:27** — 'Peace I leave with you; my peace I give you. Do not let your hearts be troubled and do not be afraid.'"
+                    ];
+                    return encouragements[Math.floor(Math.random() * encouragements.length)];
+                }
+
+                // ----- 19. "How are you?" or "What do you do?" -----
+                if (/how are you|what do you do|who are you|tell me about yourself/i.test(lower)) {
+                    return "I'm Breezy 🤖❤️ — your emotional support companion created by Jojo Kalim. My only purpose is to listen to your heart and help you find hope and encouragement in God's Word. Tell me how you're feeling, and I'll share a verse and advice just for you. That's all I'm here for — to be a friend who listens. 💕";
+                }
+
+                // ----- 20. "Verse about" -----
+                if (/verse about|scripture about|bible say about|what does the bible say about|give me a verse about/i
+                    .test(lower)) {
+                    const verses = [
+                        "📖 **Isaiah 41:10** — 'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.'",
+                        "📖 **Philippians 4:13** — 'I can do all this through him who gives me strength.'",
+                        "📖 **Jeremiah 29:11** — 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.'",
+                        "📖 **John 14:27** — 'Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.'",
+                        "📖 **Romans 8:28** — 'And we know that in all things God works for the good of those who love him, who have been called according to his purpose.'",
+                        "📖 **Psalm 23:4** — 'Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.'",
+                        "📖 **Joshua 1:9** — 'Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.'",
+                        "📖 **2 Timothy 1:7** — 'For God has not given us a spirit of fear, but of power and of love and of a sound mind.'"
+                    ];
+                    return "Here's a verse for you:\n\n" + verses[Math.floor(Math.random() * verses.length)] +
+                        "\n\nI hope this encourages you! 🙏";
+                }
+
+                // ----- 21. CATCH-ALL: ALWAYS RESPOND -----
+                const catchAll = [
+                    "I hear you. ❤️ Can you tell me more about how you're feeling right now? I'm here to listen and encourage you.",
+                    "Thank you for sharing that with me. 🙏 How does that make you feel? I'm here to support you.",
+                    "I'm listening. 💕 What's on your heart today? You can tell me anything — I'm here for you.",
+                    "That sounds important to you. 🤔 Would you like to talk more about it? I'm here to help you find hope and encouragement.",
+                    "I care about what you're going through. 🌟 Can you tell me how you're feeling about this situation?",
+                    "You're not alone in this. 💖 I'm here to listen and share a verse that might encourage you. What's been on your mind?",
+                    "I hear the weight in your words. 🫂 Let's talk about it. What do you need most right now — comfort, wisdom, or hope?",
+                    "Thank you for trusting me with this. 🙏 God cares about every detail of your life. Would you like a verse of encouragement?",
+                    "I'm here with you. ❤️ Whatever you're going through, God is with you too. Would you like to share more?",
+                    "That's a lot to carry. 🫂 Let's bring it to God together. What's one thing you'd like me to pray about with you?"
+                ];
+                return catchAll[Math.floor(Math.random() * catchAll.length)];
+
+            } catch (error) {
+                console.warn('Error generating reply:', error);
+                return "I'm here for you. ❤️ Sometimes I don't have the perfect words, but God does. He loves you and He's listening. Would you like to try sharing that again? 🙏";
+            }
         }
 
-        document.getElementById('enableNotifBtn').addEventListener('click', async function() {
-            if ('Notification' in window) {
-                const result = await Notification.requestPermission();
-                if (result === 'granted') {
-                    notificationPermission = true;
-                    document.getElementById('permBanner').classList.remove('show');
-                    alert('✅ Notifications enabled!\nAlarms will work even when closed.');
-                }
+        // ============================================================
+        // EVENT LISTENERS
+        // ============================================================
+
+        sendBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendMessage();
+        });
+
+        userInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
             }
         });
 
         // ============================================================
-        // ALARM TRIGGER
+        // WELCOME MESSAGE
         // ============================================================
-        function triggerAlarm(slotName) {
-            const labels = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
-            const icons = { morning: '🌅', afternoon: '☀️', evening: '🌙' };
 
-            const verseIdx = getVerseForSlot(slotName);
-            const verse = bibleVerses[verseIdx];
+        function showWelcome() {
+            const welcomeText =
+                "Hi, I'm Breezy 🤖❤️. I'm here to listen to your heart — no matter what you're feeling.\n\nJust tell me what's on your mind: sadness, anger, joy, stress, loneliness, relationship struggles, infidelity, financial problems, health concerns, loss, career decisions, or anything else. I'll share encouragement and a Bible verse to help you through.\n\nYou don't have to be okay. I'm here for you. What's going on today?";
 
-            if (verse) {
-                document.getElementById('verseRef').textContent = verse.ref;
-                document.getElementById('verseText').textContent = verse.text;
-                document.getElementById('verseTimeTag').textContent = `${icons[slotName]} ${labels[slotName]} verse`;
-
-                document.getElementById('alarmVerse').textContent = verse.text;
-                document.getElementById('alarmRef').textContent = verse.ref;
-                document.getElementById('alarmOverlay').classList.add('active');
-
-                startLongAlarm();
-                document.getElementById('alarmIndicator').style.display = 'block';
-
-                sendNotification(
-                    `🔔 ${labels[slotName]} Devotion`,
-                    verse.text,
-                    verse.ref
-                );
-
-                markSlotShown(slotName);
-                state.alarmTriggered = true;
-                state.alarmSlot = slotName;
-                saveState();
-                updateUI();
-            }
-        }
-
-        // ============================================================
-        // DISMISS ALARM
-        // ============================================================
-        function dismissAlarm() {
-            stopLongAlarm();
-            document.getElementById('alarmOverlay').classList.remove('active');
-            document.getElementById('alarmIndicator').style.display = 'none';
-            state.alarmTriggered = false;
-            state.alarmSlot = null;
-            saveState();
-            updateUI();
-        }
-
-        document.getElementById('dismissAlarmBtn').addEventListener('click', dismissAlarm);
-
-        // ============================================================
-        // CHECK SCHEDULED TIMES
-        // ============================================================
-        let lastCheckedMinute = -1;
-
-        function checkScheduledTimes() {
-            const currentMin = getCurrentMinutes();
-            if (currentMin === lastCheckedMinute) return false;
-            lastCheckedMinute = currentMin;
-
-            const slots = ['morning', 'afternoon', 'evening'];
-
-            slots.forEach(slotName => {
-                const slotTime = state.times[slotName];
-                const slot = state[slotName];
-                const isShown = slot ? slot.shown : false;
-
-                if (Math.abs(currentMin - slotTime) <= 1 && !isShown) {
-                    triggerAlarm(slotName);
-                }
-            });
-
-            return true;
-        }
-
-        // ============================================================
-        // UPDATE UI
-        // ============================================================
-        function updateUI() {
-            const slots = ['morning', 'afternoon', 'evening'];
-            const statusIds = ['morningStatus', 'afternoonStatus', 'eveningStatus'];
-            const timeIds = ['morningTime', 'afternoonTime', 'eveningTime'];
-
-            slots.forEach((slot, i) => {
-                const slotState = state[slot];
-                const statusEl = document.getElementById(statusIds[i]);
-                const timeEl = document.getElementById(timeIds[i]);
-
-                const timeMin = state.times[slot];
-                timeEl.textContent = minutesToTimeStr(timeMin);
-
-                if (state.alarmTriggered && state.alarmSlot === slot) {
-                    statusEl.innerHTML = '<i class="fas fa-bell"></i> ringing';
-                    statusEl.className = 'status alarm';
-                } else if (slotState && slotState.shown) {
-                    statusEl.innerHTML = '<i class="fas fa-check-circle"></i> done';
-                    statusEl.className = 'status done';
-                } else {
-                    statusEl.innerHTML = '<i class="fas fa-clock"></i> wait';
-                    statusEl.className = 'status';
-                }
-            });
-
-            saveState();
-        }
-
-        // ============================================================
-        // TIME PICKER MODAL
-        // ============================================================
-        let editingSlot = null;
-
-        function openTimePicker(slotName) {
-            editingSlot = slotName;
-            const labels = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
-            const icons = { morning: '🌅', afternoon: '☀️', evening: '🌙' };
-
-            document.getElementById('modalTitle').textContent = `${icons[slotName]} ${labels[slotName]}`;
-            document.getElementById('modalSub').textContent = `Set your ${labels[slotName].toLowerCase()} devotion time`;
-
-            const currentMin = state.times[slotName];
-            const hours = String(Math.floor(currentMin / 60)).padStart(2, '0');
-            const mins = String(currentMin % 60).padStart(2, '0');
-            document.getElementById('timePicker').value = `${hours}:${mins}`;
-
-            document.getElementById('timeModal').classList.add('active');
-        }
-
-        function closeTimePicker() {
-            document.getElementById('timeModal').classList.remove('active');
-            editingSlot = null;
-        }
-
-        function saveTimePicker() {
-            if (!editingSlot) return;
-            const val = document.getElementById('timePicker').value;
-            if (!val) return;
-
-            const [h, m] = val.split(':').map(Number);
-            const minutes = h * 60 + m;
-
-            state.times[editingSlot] = minutes;
-            resetSlotShown(editingSlot);
-            saveState();
-            updateUI();
-
-            closeTimePicker();
-        }
-
-        document.querySelectorAll('.time-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const slot = this.dataset.slot;
-                if (slot) openTimePicker(slot);
-            });
-        });
-
-        document.getElementById('modalCancel').addEventListener('click', closeTimePicker);
-        document.getElementById('modalSave').addEventListener('click', saveTimePicker);
-
-        document.getElementById('timeModal').addEventListener('click', function(e) {
-            if (e.target === this) closeTimePicker();
-        });
-
-        // ============================================================
-        // TEST ALARM
-        // ============================================================
-        document.getElementById('testAlarmBtn').addEventListener('click', function() {
-            const idx = getUniqueVerse();
-            const verse = bibleVerses[idx];
-            if (verse) {
-                document.getElementById('alarmVerse').textContent = verse.text;
-                document.getElementById('alarmRef').textContent = verse.ref;
-                document.getElementById('alarmOverlay').classList.add('active');
-                startLongAlarm();
-                document.getElementById('alarmIndicator').style.display = 'block';
-                sendNotification('🔔 Test Alarm', 'Your devotion alarm is working!', verse.ref);
-            }
-        });
-
-        // ============================================================
-        // BACKGROUND CHECK
-        // ============================================================
-        function backgroundCheck() {
-            if (isAlarmPlaying) {
-                if (!document.getElementById('alarmOverlay').classList.contains('active')) {
-                    document.getElementById('alarmOverlay').classList.add('active');
-                }
-            }
-
-            checkScheduledTimes();
-            updateUI();
+            const wrapper = document.createElement('div');
+            wrapper.className = 'message-wrapper bot';
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.innerHTML = '<i class="fas fa-robot"></i>';
+            wrapper.appendChild(avatar);
+            const bubble = document.createElement('div');
+            bubble.className = 'message';
+            const textSpan = document.createElement('div');
+            textSpan.style.whiteSpace = 'pre-wrap';
+            textSpan.textContent = welcomeText;
+            bubble.appendChild(textSpan);
+            const meta = document.createElement('div');
+            meta.className = 'msg-meta';
+            meta.innerHTML = `Breezy · now`;
+            bubble.appendChild(meta);
+            wrapper.appendChild(bubble);
+            chatMessages.appendChild(wrapper);
         }
 
         // ============================================================
         // INIT
         // ============================================================
-        function init() {
-            requestNotificationPermission();
 
-            // Check for existing Service Worker
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                    if (registrations.length > 0) {
-                        document.getElementById('swStatus').innerHTML = '<i class="fas fa-check-circle"></i> Active';
-                        document.getElementById('swStatus').className = 'status-badge active';
-                        swRegistration = registrations[0];
-                    }
-                });
-            }
+        showWelcome();
+        userInput.focus();
 
-            // Load initial verse
-            const slots = ['morning', 'afternoon', 'evening'];
-            let foundVerse = false;
-
-            for (const slot of slots) {
-                const slotState = state[slot];
-                if (slotState && slotState.verseIndex !== null && slotState.verseIndex !== undefined) {
-                    const verse = bibleVerses[slotState.verseIndex];
-                    if (verse) {
-                        document.getElementById('verseRef').textContent = verse.ref;
-                        document.getElementById('verseText').textContent = verse.text;
-                        const icons = { morning: '🌅', afternoon: '☀️', evening: '🌙' };
-                        const labels = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
-                        document.getElementById('verseTimeTag').textContent = `${icons[slot]} ${labels[slot]} verse`;
-                        foundVerse = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!foundVerse) {
-                const idx = getUniqueVerse();
-                const verse = bibleVerses[idx];
-                if (verse) {
-                    document.getElementById('verseRef').textContent = verse.ref;
-                    document.getElementById('verseText').textContent = verse.text;
-                    document.getElementById('verseTimeTag').textContent = '<i class="fas fa-book"></i> Daily verse';
-                }
-            }
-
-            // Check if there's a pending alarm
-            if (state.alarmTriggered && state.alarmSlot) {
-                const slotName = state.alarmSlot;
-                const slot = state[slotName];
-                if (slot && !slot.shown) {
-                    const verseIdx = getVerseForSlot(slotName);
-                    const verse = bibleVerses[verseIdx];
-                    if (verse) {
-                        document.getElementById('alarmVerse').textContent = verse.text;
-                        document.getElementById('alarmRef').textContent = verse.ref;
-                        document.getElementById('alarmOverlay').classList.add('active');
-                        startLongAlarm();
-                        document.getElementById('alarmIndicator').style.display = 'block';
-                    }
-                }
-            }
-
-            updateUI();
-            checkScheduledTimes();
-
-            // Check every 3 seconds
-            setInterval(backgroundCheck, 3000);
-
-            // Handle visibility change
-            document.addEventListener('visibilitychange', function() {
-                if (!document.hidden) {
-                    if (state.alarmTriggered && !document.getElementById('alarmOverlay').classList.contains('active')) {
-                        const slot = state.alarmSlot;
-                        if (slot) {
-                            const verseIdx = getVerseForSlot(slot);
-                            const verse = bibleVerses[verseIdx];
-                            if (verse) {
-                                document.getElementById('alarmVerse').textContent = verse.text;
-                                document.getElementById('alarmRef').textContent = verse.ref;
-                                document.getElementById('alarmOverlay').classList.add('active');
-                                startLongAlarm();
-                                document.getElementById('alarmIndicator').style.display = 'block';
-                            }
-                        }
-                    }
-                    checkScheduledTimes();
-                    updateUI();
-                }
-            });
-
-            console.log('📖 Daily Devotion initialized');
-            console.log('⏰ Times:', minutesToTimeStr(state.times.morning),
-                minutesToTimeStr(state.times.afternoon),
-                minutesToTimeStr(state.times.evening));
-            console.log('🔔 Click "Background" for offline alarms');
-        }
-
-        document.addEventListener('DOMContentLoaded', init);
+        console.log('❤️ Breezy Emotional Support loaded — always responds!');
+        console.log('😊 Emotions covered:', Object.keys(feelingsData).length);
+        console.log('🙏 Includes Jojo Kalim, April Joy Contiga, and location.');
     </script>
 </body>
 </html>
